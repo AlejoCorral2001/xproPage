@@ -7,12 +7,7 @@ if(process.env.NODE_ENV != 'production'){
 
 module.exports = {
   plugins: [
-    {
-      resolve: `gatsby-theme-codebushi`,
-      options: {
-        tailwindConfig: `tailwind.config.js`
-      }
-    },
+  
     `gatsby-transformer-sharp`, 
     `gatsby-plugin-sharp`,
     `gatsby-plugin-fontawesome-css`,
@@ -29,7 +24,24 @@ module.exports = {
         spaceId: process.env.SPACE_ID,
         accessToken: process.env.ACCESS_TOKEN,
       }
-    }
+    },{
+      resolve: `gatsby-theme-animated-tailwind`,
+      options: {
+        tailwindConfig: `tailwind.config.js`
+      }
+    }, 
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `GatsbyJS`,
+        short_name: `GatsbyJS`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `src/logo/logo2.png`, // This path is relative to the root of the site.
+      },
+    },`gatsby-plugin-offline`,
     
   ]
   

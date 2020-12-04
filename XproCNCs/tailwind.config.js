@@ -9,10 +9,11 @@ module.exports = {
         }
       },
       animation: {
-        bounce: 'bounce 1s infinite',
+        bounced: 'bounced 1s infinite',
+        ping: 'ping 2.5s infinite',
       },
       keyframes: {
-        bounce: {
+        bounced: {
           '0%, 100%': {
             transform: 'scale(0.5)',
           },

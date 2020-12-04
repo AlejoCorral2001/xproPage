@@ -12,13 +12,13 @@ export default (props) => {
   const width = useWidth()
   let size = width<1000?'2x':"3x"
   if(props.size!=null){
-     size = Math.round(width/220)+"x"
+     size = Math.round(width/300)+"x"
   }
  
   
   return (
     <div className={Style.container} style={props.style}>
-    <a href="mailto:mail@gmail.com">
+    <a href="mailto:xprocnc@gmail.com">
       <div className={Style.EnvelopDiv}>
         <FontAwesomeIcon
           className={Style.iconEnvelop}
@@ -27,7 +27,7 @@ export default (props) => {
         />
       </div>
       </a>
-      <a href='tel:351123456'>
+      <a href='tel:0351157889350'>
       <div className={Style.PhoneDiv}>
         <FontAwesomeIcon
           className={Style.iconPhone}
@@ -36,7 +36,7 @@ export default (props) => {
         />
       </div>
       </a>
-      <a href="https://www.facebook.com/cncxpro.router">
+    {/*   <a href="https://www.facebook.com/cncxpro.router">
       <div className={Style.FacebookDiv}>
         <FontAwesomeIcon
           className={Style.iconFacebook}
@@ -53,8 +53,8 @@ export default (props) => {
           icon={faInstagram}
         />
       </div>
-      </a>
-      <a href="https://wa.me/3517021672/?text">
+      </a> */}
+      <a href="https://wa.me/5493517889350/?text">
       <div className={Style.WhatsappDiv}>
         <FontAwesomeIcon
           className={Style.iconWhatsapp}

@@ -1,4 +1,4 @@
-import react from 'react'
+import React from 'react'
 import {graphql} from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout/Layout'
@@ -32,25 +32,29 @@ export default function cnc ({data}){
           </div>
           <div className="flex-1 px-3">
             <Card className="mb-8">
-              <p className="font-semibold text-xl">calidad en todo sentido</p>
+              <p className="font-semibold text-xl">Calidad en todo sentido</p>
               <p className="mt-4">
-                utilizamos materiales de alta resistencia para asegurar la durabilidad y buen funcionamiento de nuestros equipos
+                Utilizamos materiales de alta resistencia para asegurar la durabilidad y buen funcionamiento de nuestros equipos
               </p>
             </Card>
           </div>
           <div className="flex-1 px-3">
             <Card className="mb-8">
-              <p className="font-semibold text-xl">lista para usar</p>
+              <p className="font-semibold text-xl">Lista para usar</p>
               <p className="mt-4">
-                recibi cualquiera de nuestros routers y comenza a trabajar en pocas horas 
+                Recibi cualquiera de nuestros routers y comenza a trabajar en pocas horas 
               </p>
             </Card>
           </div>
         </div>
         <br/>
+        <div className={'bg-blue-200 p-4 rounded-lg'}><p className={'font-serif'}>{'-->'+machine.description.description}</p></div>
+        <br/>
         <Specification obj={machine.features}/>
         <br/>
-        
+        <p className={'bg-blue-200 p-5 rounded-lg animate-pulse'}>✴Junto a la compra del router se entregan una serie de videos para poder empezar a usarla en tan solo 90 minutos. En ellos se explica como generar el código que reciben las máquinas como también la forma de enviárselo y poder realizar piezas sin perder tiempo.</p>
+        <br/>
+        <p className={machine.stock?'text-center font-medium text-xl bg-green-400 p-3 rounded-lg':'text-center font-medium text-xl bg-red-400 p-3 rounded-lg'}>{machine.stock?'Este producto se encuentra en stock':'Este producto no se encuentra en stock'}</p>
        
        
         </div>
@@ -68,7 +72,7 @@ query($title: String!){
             node{
                 title
                 price
-            
+                stock
                 description {
                   description
                 }
@@ -79,6 +83,8 @@ query($title: String!){
                   Motorizacion
                   Husillo
                   Transmicion
+                  Ejes
+                  Desplazamiento
                   Velocidad
                   Sistema
                   Alimentacion

@@ -33,7 +33,7 @@ export default (props) => {
     if (indexI.current != 0) {
       indexI.current--;
     } else {
-      indexI.current=11;
+      indexI.current=max;
     }
     updateDom()
   }

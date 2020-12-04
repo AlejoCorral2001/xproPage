@@ -82,7 +82,7 @@ export default ({data}) => (
       }
       secondarySlot={<SvgCharts />}
     />
-    <div className='animate:bounce'><div className='w-16 h-16 bg-gray border-solid border-gray-900 border '>dd</div></div>
+    
      
   
    
