@@ -6,7 +6,7 @@ import {Link} from 'gatsby'
 export default ()=>{
 const data = useStaticQuery(graphql`
 query{
-  imageSharp(fixed: {originalName: {eq: "4_FRESAS.jpg"}}) {
+  imageSharp(fixed: {originalName: {eq: "variasFresas.jpg"}}) {
     id
     fluid{
       ...GatsbyImageSharpFluid
@@ -68,6 +68,7 @@ return(
             <Link to={'/fresas'} className="flex-1 m-5 hover:shadow-xl hover:bg-gray-200 relative border-gray-200 border-solid border" >
             <Card>
               <p className="font-semibold text-xl text-center mb-4">FRESAS</p>
+              <br/>
               <div >
                 <Img className={'rounded-lg'}fluid={data.imageSharp.fluid}/>
               </div>
