@@ -6,6 +6,12 @@ import {Link} from 'gatsby'
 export default ()=>{
 const data = useStaticQuery(graphql`
 query{
+  imageSharp(fixed: {originalName: {eq: "4_FRESAS.jpg"}}) {
+    id
+    fluid{
+      ...GatsbyImageSharpFluid
+    }
+  }
     allContentfulCncMachine {
       
           nodes {
@@ -45,9 +51,8 @@ return(
     <div className="flex flex-col sm:flex-row sm:-mx-3 mt-12  ">
   {models.map((node)=>(
     <Link to={'/'+node.title} className="flex-1 m-5 hover:shadow-xl hover:bg-gray-200 relative border-gray-200 border-solid border" >
-    <Card>
             {stock(node)}
-           
+            <Card>
               <p className="font-semibold text-xl text-center mb-4">{node.title}</p>
             <div >
                 <Img className={'rounded-lg'}fluid={node.images[0].fluid}/>
@@ -60,8 +65,14 @@ return(
 
 
   ))}
-   
-    
+            <Link to={'/fresas'} className="flex-1 m-5 hover:shadow-xl hover:bg-gray-200 relative border-gray-200 border-solid border" >
+            <Card>
+              <p className="font-semibold text-xl text-center mb-4">FRESAS</p>
+              <div >
+                <Img className={'rounded-lg'}fluid={data.imageSharp.fluid}/>
+              </div>
+            </Card>
+            </Link>
 
     </div>
     
