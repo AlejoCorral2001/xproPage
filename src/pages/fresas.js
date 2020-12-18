@@ -9,13 +9,14 @@ import StatsBox from '../components/StatsBox';
 import customerData from '../data/customer-data';
 import HeroImage from '../svg/HeroImage';
 import SvgCharts from '../svg/SvgCharts';
-import Product from '../components/productos/products'
+import Fresas from '../components/productos/fresas'
 export default () => (
   <Layout  type={'catalogue'}>
     <div className="container mx-auto px-8 ">
     <section className="pt-20 md:pt-40">
       <div className="flex-1 px-3">
-          esta es la pagina de fresas
+         <Fresas/>
+        
       </div>
       
     

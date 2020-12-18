@@ -1,0 +1,52 @@
+import React from 'react'
+import Img from 'gatsby-image'
+import Card from '../Card';
+import {Link} from 'gatsby'
+import {useState} from 'react'
+import useWidth from '../../hooks/useWidth'
+import Style from './products.module.css'
+export default (props)=>{
+let node = props.obj
+
+const width = useWidth()
+console.log(width)
+let size = '50%'
+if(width<500){
+    size=(props.size==true?'100%':'85%')
+}else{
+    size=(props.size==true?'75%':'35%')
+}
+
+
+
+const extra = props.size?(
+    <>
+    <div className='text-center p-2 font-medium border-gray-900  m-6 '>{node.description.description}</div>
+    <div className='text-center p-2 font-medium border-gray-900  m-6 text-xl'>{node.price}</div>
+    <div className='text-center p-2 font-medium border-gray-900  m-6 font-serif text-lg mx-auto rounded-lg' style={{width:'fit-content',backgroundColor:node.available==true?'#48bb78':'#fc8181'}}>{node.available==true?'disponible':'agotado'}</div>
+    </>
+):
+(
+   null
+)
+return(
+
+ 
+    <div onClick={props.func} className={Style.transition+" hover:shadow-xl bg-orange-200 m-1 p-2 md:m-2 md:p-4  rounded-lg"} style={{width:size, backgroundColor: props.size?'#f6ad55':'#feebc8'}} >
+          
+            <p className="font-semibold text-sm text-center mb-4 h-12  sm:text-xl">{node.name}</p>
+          
+            <Img className='rounded-lg w-full' fluid={node.picture.fluid}/>
+            {extra}
+           
+    </div>
+   
+    
+ 
+
+
+ 
+    
+)
+}
+    

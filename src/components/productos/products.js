@@ -32,8 +32,6 @@ query{
         }
       
 }
-
-
 `)
 
 const models = data.allContentfulCncMachine.nodes
@@ -79,4 +77,3 @@ return(
     
 )
 }
-    
