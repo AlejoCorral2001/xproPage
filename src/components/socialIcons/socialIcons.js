@@ -12,7 +12,8 @@ export default (props) => {
   const width = useWidth()
   let size = width<1000?'2x':"3x"
   if(props.size!=null){
-     size = Math.round(width/300)+"x"
+     size = Math.round(width/300)<4?'3x':Math.round(width/400)+'x'
+     
   }
  
   
@@ -27,7 +28,7 @@ export default (props) => {
         />
       </div>
       </a>
-      <a href='tel:0351157889350'>
+      <a href='https://wa.me/5493517889350/?text'>
       <div className={Style.PhoneDiv}>
         <FontAwesomeIcon
           className={Style.iconPhone}
@@ -54,7 +55,7 @@ export default (props) => {
         />
       </div>
       </a> */}
-      <a href="https://wa.me/5493517889350/?text">
+      <a href="https://api.whatsapp.com/send/?phone=5493517889350&text=Hola!+Me+comun%C3%ADco+desde+la+p%C3%A1gina+www.xprocns.com">
       <div className={Style.WhatsappDiv}>
         <FontAwesomeIcon
           className={Style.iconWhatsapp}
