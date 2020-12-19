@@ -40,12 +40,6 @@ return(
             {extra}
            
     </div>
-   
-    
- 
-
-
- 
     
 )
 }

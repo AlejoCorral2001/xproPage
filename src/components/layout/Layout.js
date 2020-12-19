@@ -2,13 +2,29 @@ import React from 'react';
 import Footer from './Footer';
 import Header from './Header';
 import {useState} from 'react'
+import Img from 'gatsby-image'
+import Style from './presentation.module.css'
+import {useStaticQuery, graphql} from 'gatsby'
 const Layout = (props) => {
+  const data = useStaticQuery(graphql`
+query{
+  imageSharp(fixed: {originalName: {eq: "logo.png"}}) {
+    id
+    fluid{
+      ...GatsbyImageSharpFluid
+    }
+  }
+     
+}
+`)
 if(props.type=='index'){
 const [content, setContent] = useState(
   <>
  
      <>
-    hola
+    <div className={'flex text-center justify-center'}>
+    <Img fluid={data.imageSharp.fluid} className={Style.animate}/>
+    </div>
     </>
   
   </>
@@ -21,7 +37,7 @@ const [content, setContent] = useState(
   </>
 ))
 },
-1000
+2000
 )
   return (
     <>
