@@ -25,7 +25,7 @@ export default ({data}) => {
             Comodidad y simpleza en una sola pieza
           </h1>
           <p className="text-xl lg:text-2xl mt-6 font-light">
-            junto a la compra de cualquier router cnc estan incluidos videos de capacitacion para poder comenzar a explotar tus ideas en tan solo unas horas
+            Junto a la compra de cualquier router cnc estan incluidos videos de capacitacion para poder comenzar a explotar tus ideas en tan solo unas horas
           </p>
           <p className="mt-8 md:mt-12">
             <Button size="lg" link={'/catalogue'}>Catálogo</Button>
@@ -45,25 +45,25 @@ export default ({data}) => {
         <div className="flex flex-col sm:flex-row sm:-mx-3 mt-12">
           <div className="flex-1 px-3">
             <Card className="mb-8">
-              <p className="font-semibold text-xl">mejores precios del mercado</p>
+              <p className="font-semibold text-xl">Mejores precios del mercado</p>
               <p className="mt-4">
-                actualmente estamos manejando los precios mas bajos dentro del mercado sin sacrificar la durabilidad y calidad de nuestros productos
+                Actualmente estamos manejando los precios mas bajos dentro del mercado sin sacrificar la durabilidad y calidad de nuestros productos
               </p>
             </Card>
           </div>
           <div className="flex-1 px-3">
             <Card className="mb-8">
-              <p className="font-semibold text-xl">calidad en todo sentido</p>
+              <p className="font-semibold text-xl">Calidad en todo sentido</p>
               <p className="mt-4">
-                utilizamos materiales de alta resistencia para asegurar la durabilidad y buen funcionamiento de nuestros equipos
+                Utilizamos materiales de alta resistencia para asegurar la durabilidad y buen funcionamiento de nuestros equipos
               </p>
             </Card>
           </div>
           <div className="flex-1 px-3">
             <Card className="mb-8">
-              <p className="font-semibold text-xl">lista para usar</p>
+              <p className="font-semibold text-xl">Lista para usar</p>
               <p className="mt-4">
-                recibi cualquiera de nuestros routers y comenza a trabajar en pocas horas 
+                Recibi cualquiera de nuestros routers y comenza a trabajar en pocas horas 
               </p>
             </Card>
           </div>
@@ -76,10 +76,10 @@ export default ({data}) => {
       primarySlot={
         <div className="lg:pl-32 xl:pl-48">
           <h3 className="text-3xl font-semibold leading-tight">
-            diseña y planea los pasos para que tu emprendimiento crezca
+            Diseña y planea los pasos para que tu emprendimiento crezca
           </h3>
           <p className="mt-8 text-xl font-light leading-relaxed">
-            hoy en dia poder utilizar un router cnc significa, en pocas palabras, tener la posibilidad de encontrar salidas laborales de forma rapida y sensilla. Los routers cnc son ideales para hacer trabajos repetitivos en los cuales se precisa una alta precision y exactitud en el resultado, disminuyendo los gastos de manufacturacòn y reflejando un aumento en las ganancias.
+            Hoy en dia poder utilizar un router cnc significa, en pocas palabras, tener la posibilidad de encontrar salidas laborales de forma rapida y sensilla. Los routers cnc son ideales para hacer trabajos repetitivos en los cuales se precisa una alta precision y exactitud en el resultado, disminuyendo los gastos de manufacturacòn y reflejando un aumento en las ganancias.
           </p>
         </div>
       }

@@ -21,7 +21,7 @@ if(width<500){
 
 const extra = props.size?(
     <>
-    <div className='text-center p-2 font-medium border-gray-900  m-6 '>{node.description.description}</div>
+    <div className='text-center p-2 font-medium border-gray-900  m-6 text-lg '>{node.description.description}</div>
     <div className='text-center p-2 font-medium border-gray-900  m-6 text-xl'>{node.price}</div>
     <div className='text-center p-2 font-medium border-gray-900  m-6 font-serif text-lg mx-auto rounded-lg' style={{width:'fit-content',backgroundColor:node.available==true?'#48bb78':'#fc8181'}}>{node.available==true?'disponible':'agotado'}</div>
     </>
@@ -32,7 +32,7 @@ const extra = props.size?(
 return(
 
  
-    <div onClick={props.func} className={Style.transition+" hover:shadow-xl bg-orange-200 m-1 p-2 md:m-2 md:p-4  rounded-lg"} style={{width:size, backgroundColor: props.size?'#f6ad55':'#feebc8'}} >
+    <div onClick={props.func} className={Style.transition+" hover:shadow-xl bg-orange-300 m-2 p-2 md:m-3 md:p-4  rounded-lg"} style={{width:size, backgroundColor: props.size?'#f6ad55':'#fbd38d'}} >
           
             <p className="font-semibold text-sm text-center mb-4 h-12  sm:text-xl">{node.name}</p>
           

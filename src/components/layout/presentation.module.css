@@ -10,8 +10,8 @@
     0%   {top:-200px}
     50% {top: 100px; width: 30%; opacity:1}
     90% {top:0}
-    90%{width:50%; opacity:0.1;}
-    100%{width:50%; opacity:0;}
+    90%{width:75%; opacity:0.1;}
+    100%{width:75%; opacity:0;}
   }
   
   /* The element to apply the animation to */
