@@ -1,15 +1,16 @@
 .animate{
     transition: 1s ease-in-out;
     animation-name: animate;
-    animation-duration: 2s;
+    animation-duration: 2.5s;
     position: absolute;
     width: 30%;
     border-radius: 1rem;
 }
 @keyframes animate {
-    0%   {top:-100px}
+    0%   {top:-200px}
     70% {top: 100px; width: 30%}
-    100%{top: 0px;width:200%}
+    71% {top:0}
+    100%{width:20000px}
   }
   
   /* The element to apply the animation to */
