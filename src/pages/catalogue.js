@@ -12,13 +12,10 @@ import SvgCharts from '../svg/SvgCharts';
 import Product from '../components/productos/products'
 export default () => (
   <Layout  type={'catalogue'}>
-    <div className="container mx-auto px-8 ">
-    <section className="pt-20 md:pt-40">
-      <div className="flex-1 px-3"></div>
+    <div className="mx-auto px-4 md:mx-24">
+    <section className="pt-20">
       <Product/>
-    
-       
-      
+ 
     </section>
     </div>
   </Layout>

@@ -12,8 +12,11 @@ import SvgCharts from '../svg/SvgCharts';
 import Gmap from '../components/gMaps/gMaps'
 import Img from 'gatsby-image'
 import Insta from '../components/instagram/instagram'
-export default ({data}) => (
-  <Layout  type={'index'}>
+import {useState, useEffect} from 'gatsby'
+export default ({data}) => {
+  setTimeout(()=>{console.log('hola')},5000)
+  return(
+    <Layout  type={'index'}>
     <section className="pt-20 md:pt-40">
   
       <div className="container mx-auto px-8 lg:flex">
@@ -87,7 +90,10 @@ export default ({data}) => (
   
    
   </Layout>
-);
+   )
+}
+  
+
 
 
 

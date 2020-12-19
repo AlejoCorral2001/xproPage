@@ -3,6 +3,7 @@ import {useStaticQuery, graphql} from 'gatsby'
 import Img from 'gatsby-image'
 import Card from '../Card';
 import {Link} from 'gatsby'
+import Style from './products.module.css'
 export default ()=>{
 const data = useStaticQuery(graphql`
 query{
@@ -46,9 +47,9 @@ const stock = (obj)=>{if(obj.stock==true){
 }}
 
 return(
-    <div className="flex flex-col sm:flex-row sm:-mx-3 mt-12  ">
+    <div className={"flex flex-col  md:flex-row md:flex-wrap sm:-mx-3 mt-12 justify-center"}>
   {models.map((node)=>(
-    <Link to={'/'+node.title} className="flex-1 m-5 hover:shadow-xl hover:bg-gray-200 relative border-gray-200 border-solid border" >
+    <Link to={'/'+node.title} className=" m-4 hover:shadow-xl hover:bg-gray-200 relative border-gray-200 border-solid border md:w-5/12" >
             {stock(node)}
             <Card>
               <p className="font-semibold text-xl text-center mb-4">{node.title}</p>
@@ -63,7 +64,7 @@ return(
 
 
   ))}
-            <Link to={'/fresas'} className="flex-1 m-5 hover:shadow-xl hover:bg-gray-200 relative border-gray-200 border-solid border" >
+            <Link to={'/fresas'} className=" m-4 hover:shadow-xl hover:bg-gray-200 relative border-gray-200 border-solid border   md:w-5/12" >
             <Card>
               <p className="font-semibold text-xl text-center mb-4">FRESAS</p>
               <br/>
