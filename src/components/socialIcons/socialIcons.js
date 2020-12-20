@@ -55,7 +55,7 @@ export default (props) => {
         />
       </div>
       </a> */}
-      <a href="https://api.whatsapp.com/send/?phone=5493517889350&text=Hola!+Me+comun%C3%ADco+desde+la+p%C3%A1gina+www.xprocns.com">
+      <a href="https://api.whatsapp.com/send/?phone=5493517889350&text=Hola!+Me+comun%C3%ADco+desde+la+p%C3%A1gina+www.xprocncs.com">
       <div className={Style.WhatsappDiv}>
         <FontAwesomeIcon
           className={Style.iconWhatsapp}
