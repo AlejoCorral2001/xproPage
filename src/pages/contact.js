@@ -19,7 +19,7 @@ export default () => (
     </section>
   
 
-{/* <iframe src="https://snapwidget.com/embed/900137" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style={{width:'300px', height:'300px', margin:'auto',marginTop:'3rem'}}></iframe> */}
+<iframe src="https://snapwidget.com/embed/900137" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style={{width:'300px', height:'300px', margin:'auto',marginTop:'3rem'}}></iframe>
  
   </Layout>
 );
