@@ -54,6 +54,8 @@ export default function cnc ({data}){
         <br/>
         <p className={'bg-blue-200 p-5 rounded-lg animate-pulse'}>✴Junto a la compra del router se entregan una serie de videos para poder empezar a usarla en tan solo 90 minutos. En ellos se explica como generar el código que reciben las máquinas como también la forma de enviárselo y poder realizar piezas sin perder tiempo.</p>
         <br/>
+        <p className={'bg-blue-300 p-5 rounded-lg text-xl text-center'}>{machine.price}</p>
+        <br/>
         <p className={machine.stock?'text-center font-medium text-xl bg-green-400 p-3 rounded-lg':'text-center font-medium text-xl bg-red-400 p-3 rounded-lg'}>{machine.stock?'Este producto se encuentra en stock':'Este producto no se encuentra en stock'}</p>
        
        
