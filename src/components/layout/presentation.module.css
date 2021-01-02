@@ -1,7 +1,7 @@
 .animate{
     transition: 1s ease-in-out;
     animation-name: animate;
-    animation-duration: 3s;
+    animation-duration: 2.3s;
     position: absolute;
     width: 30%;
     border-radius: 1rem;

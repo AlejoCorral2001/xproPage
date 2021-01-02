@@ -16,7 +16,7 @@ export default () => (
     <br/>
      <Map/>
      <br/>
-     <p className='text-center font-sans'>Estamos ubicados en la zona de quintas de Arguello, Córdoba, Capital, Argentina</p>
+     <p className='text-center font-sans'>Estamos ubicados en la zona de quintas de Arguello, Córdoba Capital, Argentina</p>
     </section>
   
   </Layout>

@@ -37,7 +37,7 @@ const [content, setContent] = useState(
   </>
 ))
 },
-2000
+1500
 )
   return (
     <>
