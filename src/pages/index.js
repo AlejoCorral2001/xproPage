@@ -23,6 +23,7 @@ export default ({data}) => {
         <div className="text-center lg:text-left lg:w-1/2">
           <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none">
             Comodidad y simpleza en una sola pieza
+            fgfg
           </h1>
           <p className="text-xl lg:text-2xl mt-6 font-light">
             Junto a la compra de cualquier router cnc estan incluidos videos de capacitacion para poder comenzar a explotar tus ideas en tan solo unas horas
