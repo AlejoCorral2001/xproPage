@@ -14,7 +14,6 @@ import Img from 'gatsby-image'
 import Insta from '../components/instagram/instagram'
 import {useState, useEffect} from 'gatsby'
 export default ({data}) => {
-  setTimeout(()=>{console.log('hola')},5000)
   return(
     <Layout  type={'index'}>
     <section className="pt-20 md:pt-40">
@@ -28,8 +27,8 @@ export default ({data}) => {
             Junto a la compra de cualquier router cnc estan incluidos videos de capacitacion para poder comenzar a explotar tus ideas en tan solo unas horas
           </p>
           <p className="mt-8 md:mt-12">
-            <Button size="lg" className='mx-4 text-lg'link={'/catalogue'}>Catálogo</Button>
-            <Button size="lg"  className='mx-4 text-lg' link={'/examples'}>Ejemplos</Button>
+            <Button size="lg" className='m-4 text-lg'link={'/catalogue'}>Catálogo</Button>
+            <Button size="lg"  className='m-4 text-lg' link={'/examples'} style={{backgroundColor:'rec'}}>Ejemplos</Button>
           </p>
          
         <br/>

@@ -6,7 +6,7 @@ const sizes = {
   xl: `py-5 px-16 text-lg`
 };
 
-const Button = ({  children, className = '', size, link }) => {
+const Button = ({  children, className = '', size, link }, props) => {
   return (
     <Link to={link?link:'/'}>
     <button
@@ -14,9 +14,11 @@ const Button = ({  children, className = '', size, link }) => {
       className={`
         ${sizes[size] || sizes.default}
      
+        
         bg-primary
         hover:bg-primary-darker
         rounded
+        
         text-white
         ${className}
     `}
