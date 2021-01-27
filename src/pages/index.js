@@ -28,7 +28,8 @@ export default ({data}) => {
             Junto a la compra de cualquier router cnc estan incluidos videos de capacitacion para poder comenzar a explotar tus ideas en tan solo unas horas
           </p>
           <p className="mt-8 md:mt-12">
-            <Button size="lg" link={'/catalogue'}>Catálogo</Button>
+            <Button size="lg" className='mx-4 text-lg'link={'/catalogue'}>Catálogo</Button>
+            <Button size="lg"  className='mx-4 text-lg' link={'/examples'}>Ejemplos</Button>
           </p>
          
         <br/>
