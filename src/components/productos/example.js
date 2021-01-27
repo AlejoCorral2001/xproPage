@@ -14,7 +14,7 @@ export default (props)=>{
            
            setPictureNumber(pictureNumber==(props.example.images.length-1)?0:pictureNumber+1)
            
-          }, 3000)
+          }, 5000)
     })
 
 const example = props.example
