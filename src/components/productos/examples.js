@@ -11,6 +11,7 @@ export default ()=>{
          
             id
             title
+            material
             images {
                
                 fluid(quality:50){
@@ -22,12 +23,50 @@ export default ()=>{
       }
     }
     `)
+const examples = data.allContentfulExamples.nodes
+
+let materials = new Array();
+
+examples.map((node)=>{
+    if(materials.includes(node.material)==false){
+        materials.push(node.material)
+    }
+    
+})
+const examplesFilter = (materialFilter) => {
+    let examplesFiltered = new Array()
+    examples.map((node)=>{
+        if(node.material==materialFilter){
+            examplesFiltered.push(node)
+        }
+    })
+    console.log(examplesFiltered)  
+       return (
+        examplesFiltered.map((example)=>(
+            <Example example={example}/> 
+        ))
+       )
+      
+           
+      
+        
+}
+
 
 return(
     <div className={"flex flex-col   sm:-mx-3 mt-12 justify-center"}>
-  {data.allContentfulExamples.nodes.map((node)=>(
-    <Example example={node}/>
-  ))}
+    <p className='text-5xl mx-auto font-semibold mb-10'>Trabajos</p>
+  {
+    materials.map((materialFiltering)=>(
+    <div className='my-6 bg-blue-200'>
+    <p className='text-4xl mx-auto font-semibold mb-10  text-center'>{materialFiltering}</p>
+    {examplesFilter(materialFiltering)}
+    </div>
+  
+)
+    )
+  
+  }
           
 
     </div>
