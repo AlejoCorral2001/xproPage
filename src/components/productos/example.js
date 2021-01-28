@@ -9,14 +9,24 @@ import useWidth from '../../hooks/useWidth.js'
 import useHeight from '../../hooks/useHeight.js'
 export default (props)=>{
     const [pictureNumber,setPictureNumber] = useState(0)
+    const [update, setUpdate] = useState(1)
     useEffect(() => {
-        const timeoutId=setTimeout(() => {
+          if(update==1){
+            const timeoutId=setTimeout(() => {
            
-           setPictureNumber(pictureNumber==(props.example.images.length-1)?0:pictureNumber+1)
-           
-          }, 5000)
-    })
-
+              changeImage()
+              setUpdate(1)
+             }, 5000)
+           setUpdate(0)  
+          }
+         
+        
+        
+          
+        })
+        const changeImage = () => {
+          setPictureNumber(pictureNumber==(props.example.images.length-1)?0:pictureNumber+1)
+        }
 const example = props.example
 
 const widthRaw = useWidth();  //calculo tentativo del width
@@ -41,8 +51,8 @@ const maxHeight = (width * 1 / aspectMin)+100
 
 return(
  
-    <div className= {" m-4 hover:shadow-xl hover:bg-gray-200 relative border-gray-200 border-solid border p-10 rounded-lg mx-auto bg-orange-200"}  style={{height:maxHeight+'px', width:(width+100)+'px'}} >
-              <p className="font-semibold text-xl text-center mb-4">{example.title}</p>
+    <div onClick={changeImage} className= {" m-8 hover:shadow-xl  relative border-gray-200 border-solid border p-10 rounded-lg mx-auto bg-blue-100"}  style={{height:maxHeight+'px', width:(width+100)+'px'}} >
+              <p className="font-semibold text-xl text-center mb-4 font-sans">{example.title}</p>
             <div className='flex items-center align-middle' style={{height:(maxHeight-100)+'px'}}>
                 <Img   className={'rounded-lg mx-auto'} fluid={example.images[pictureNumber].fluid}  style={{width:width}}/>
             </div>

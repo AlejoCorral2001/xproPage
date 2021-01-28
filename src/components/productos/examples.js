@@ -55,11 +55,11 @@ const examplesFilter = (materialFilter) => {
 
 return(
     <div className={"flex flex-col   sm:-mx-3 mt-12 justify-center"}>
-    <p className='text-5xl mx-auto font-semibold mb-10'>Trabajos</p>
+    <p className='text-5xl mx-auto font-semibold mb-10 uppercase bg-blue-200 p-6 rounded-lg shadow-md'>Trabajos</p>
   {
     materials.map((materialFiltering)=>(
-    <div className='my-6 bg-blue-200'>
-    <p className='text-4xl mx-auto font-semibold mb-10  text-center'>{materialFiltering}</p>
+    <div className='my-6 bg-blue-200 rounded-lg'>
+    <p className='text-4xl mx-auto font-semibold mb-10  text-center uppercase'>{materialFiltering}</p>
     {examplesFilter(materialFiltering)}
     </div>
   
