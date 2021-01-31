@@ -33,7 +33,6 @@ const widthRaw = useWidth();  //calculo tentativo del width
 let width = 0
 width =( widthRaw - widthRaw / 10)-100
 
-
 let aspectMin=example.images[0].fluid.aspectRatio //calculo del minimo aspect ratio
 example.images.map((node)=>{
   aspectMin=node.fluid.aspectRatio<aspectMin?node.fluid.aspectRatio:aspectMin
@@ -44,14 +43,16 @@ let height = width * 1/aspectMin
 if (height > heightRaw - 200 ){
   width = (heightRaw - 200) * aspectMin
 }
-
+if(width>widthRaw-350 && widthRaw>700){
+  width = widthRaw-350
+}
 const maxHeight = (width * 1 / aspectMin)+100
 
 
 
 return(
  
-    <div onClick={changeImage} className= {" m-8 hover:shadow-xl  relative border-gray-200 border-solid border p-10 rounded-lg mx-auto bg-blue-100"}  style={{height:maxHeight+'px', width:(width+100)+'px'}} >
+    <div onClick={changeImage} className= {" m-6   relative border-gray-200 border-solid border p-5 md:p-10 rounded-lg mx-auto bg-gray-400"}  style={{height:maxHeight+'px', width:(width+100)+'px'}} >
               <p className="font-semibold text-xl text-center mb-4 font-sans">{example.title}</p>
             <div className='flex items-center align-middle' style={{height:(maxHeight-100)+'px'}}>
                 <Img   className={'rounded-lg mx-auto'} fluid={example.images[pictureNumber].fluid}  style={{width:width}}/>
