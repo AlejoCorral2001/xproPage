@@ -55,7 +55,7 @@ const examplesFilter = (materialFilter) => {
 
 return(
     <div className={"flex flex-col   sm:-mx-3 mt-12 justify-center"}>
-    <p className='text-3xl md:text-5xl mx-auto font-semibold mb-10 uppercase  p-6 rounded-lg'>Ejemplos</p>
+    <p className='text-3xl md:text-5xl mx-auto font-semibold mb-10 uppercase text-primary-darker p-6 rounded-lg'>Ejemplos</p>
   {
     materials.map((materialFiltering)=>(
     <div className='my-6 bg-primary-lighter rounded-lg'>
