@@ -52,8 +52,8 @@ const maxHeight = (width * 1 / aspectMin)+100
 
 return(
  
-    <div onClick={changeImage} className= {" m-6   relative border-gray-200 border-solid border p-5 md:p-10 rounded-lg mx-auto bg-gray-400"}  style={{height:maxHeight+'px', width:(width+100)+'px'}} >
-              <p className="font-semibold text-xl text-center mb-4 font-sans">{example.title}</p>
+    <div onClick={changeImage} className= {" m-6   relative  p-5 md:p-10 rounded-lg mx-auto bg-primary-lighter"}  style={{height:maxHeight+'px', width:(width+100)+'px'}} >
+              <p className="font-semibold text-4xl text-center mb-4 font-sans text-gray-100">{example.title}</p>
             <div className='flex items-center align-middle' style={{height:(maxHeight-100)+'px'}}>
                 <Img   className={'rounded-lg mx-auto'} fluid={example.images[pictureNumber].fluid}  style={{width:width}}/>
             </div>
