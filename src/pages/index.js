@@ -47,7 +47,7 @@ export default ({data}) => {
             <Card className="mb-8">
               <p className="font-semibold text-xl">Mejores precios del mercado</p>
               <p className="mt-4">
-                Actualmente estamos manejando los precios mas bajos dentro del mercado sin sacrificar la durabilidad y calidad de nuestros productos
+                Actualmente estamos manejando los precios más bajos del mercado sin sacrificar la durabilidad y calidad de nuestros productos.
               </p>
             </Card>
           </div>
@@ -55,7 +55,7 @@ export default ({data}) => {
             <Card className="mb-8">
               <p className="font-semibold text-xl">Calidad en todo sentido</p>
               <p className="mt-4">
-                Utilizamos materiales de alta resistencia para asegurar la durabilidad y buen funcionamiento de nuestros equipos
+                Utilizamos materiales de alta resistencia para asegurar la durabilidad y buen funcionamiento de nuestros equipos.
               </p>
             </Card>
           </div>
@@ -63,7 +63,7 @@ export default ({data}) => {
             <Card className="mb-8">
               <p className="font-semibold text-xl">Lista para usar</p>
               <p className="mt-4">
-                Recibi cualquiera de nuestros routers y comenza a trabajar en pocas horas 
+                Recibí cualquiera de nuestros routers y comenzá a trabajar en pocas horas.
               </p>
             </Card>
           </div>
