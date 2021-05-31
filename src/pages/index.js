@@ -29,6 +29,7 @@ export default ({data}) => {
           <p className="mt-8 md:mt-12">
             <Button size="lg" className='m-4 text-lg'link={'/catalogue'}>Catálogo</Button>
             <Button size="lg"  className='m-4 text-lg' link={'/examples'} color={'red'}>Ejemplos</Button>
+            
           </p>
          
         <br/>

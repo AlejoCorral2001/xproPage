@@ -26,7 +26,7 @@ export default function cnc ({data}){
             <Card className="mb-8">
               <p className="font-semibold text-xl">Quedate Tranquilo, te ayudamos</p>
               <p className="mt-4">
-               Con la compra de cualquiera de nuestro Routers se adjuntan una serie de videos tutoriales para aprender a utilizarlos desde 0
+               Con la compra de cualquiera de nuestro Routers se adjuntan una serie de videos tutoriales para aprender a utilizarlos desde 0.
               </p>
             </Card>
           </div>
@@ -34,7 +34,7 @@ export default function cnc ({data}){
             <Card className="mb-8">
               <p className="font-semibold text-xl">Calidad en todo sentido</p>
               <p className="mt-4">
-                Utilizamos materiales de alta resistencia para asegurar la durabilidad y buen funcionamiento de nuestros equipos
+                Utilizamos materiales de alta resistencia para asegurar la durabilidad y buen funcionamiento de nuestros equipos.
               </p>
             </Card>
           </div>
@@ -42,13 +42,13 @@ export default function cnc ({data}){
             <Card className="mb-8">
               <p className="font-semibold text-xl">Lista para usar</p>
               <p className="mt-4">
-                Recibi cualquiera de nuestros routers y comenza a trabajar en pocas horas 
+                Recibí cualquiera de nuestros routers y comenzá a trabajar en pocas horas.
               </p>
             </Card>
           </div>
         </div>
         <br/>
-        <div className={'bg-blue-200 p-4 rounded-lg'}><p className={'font-serif'}>{'-->'+machine.description.description}</p></div>
+        <div className={'bg-blue-200 p-4 rounded-lg'}><p className={'font-serif'}>{machine.description.description}</p></div>
         <br/>
         <Specification obj={machine.features}/>
         <br/>

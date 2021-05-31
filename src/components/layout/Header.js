@@ -9,9 +9,29 @@ import Style from './Header.module.css'
 
 const click = (func, state) =>{
   func(!state)
-  console.log('se presiono')
 }
 const Header = (props) => {
+  const pages = (
+    <>
+    <AnchorLink className="px-4" href="#features">
+    <Link to='/' className={((props.type=='index')?'font-bold ':'')}> Inicio</Link>
+    </AnchorLink>
+    <AnchorLink className="px-4" href="#services">
+       <Link to='/location'className={((props.type=='location')?'font-bold':'')}>Ubicación</Link>
+    </AnchorLink>
+    <AnchorLink className="px-4" href="#stats">
+       <Link to='/catalogue'className={((props.type=='catalogue')?'font-bold':'')}>Catálogo</Link>
+    </AnchorLink>
+    <AnchorLink className="px-4" href="#examples">
+    <Link to='/examples' className={((props.type=='examples')?'font-bold ':'')}>Ejemplos</Link>
+    </AnchorLink>
+    <AnchorLink className="px-4" href="#stats">
+       <Link to='/info'className={((props.type=='info')?'font-bold':'')}>Nosotros</Link>
+    </AnchorLink>
+    <AnchorLink className="px-4" href="#testimonials">
+      <Link to='/contact'className={((props.type=='contact')?'font-bold':'')}>Contacto</Link>
+    </AnchorLink>
+    </>)
   const width = useWidth()
   const [opened, setOpened] = useState(0)
   let result=0
@@ -26,21 +46,7 @@ const Header = (props) => {
             </div>
           </div>
           <div className="flex mt-4 sm:mt-0">
-            <AnchorLink className="px-4" href="#features">
-            <Link to='/' className={((props.type=='index')?'font-bold ':'')}> Inicio</Link>
-            </AnchorLink>
-            <AnchorLink className="px-4" href="#services">
-               <Link to='/location'className={((props.type=='location')?'font-bold':'')}>Ubicación</Link>
-            </AnchorLink>
-            <AnchorLink className="px-4" href="#stats">
-               <Link to='/catalogue'className={((props.type=='catalogue')?'font-bold':'')}>Catálogo</Link>
-            </AnchorLink>
-            <AnchorLink className="px-4" href="#stats">
-               <Link to='/info'className={((props.type=='info')?'font-bold':'')}>Nosotros</Link>
-            </AnchorLink>
-            <AnchorLink className="px-4" href="#testimonials">
-              <Link to='/contact'className={((props.type=='contact')?'font-bold':'')}>Contacto</Link>
-            </AnchorLink>
+           {pages}
           </div>
           <div className="hidden md:block">
           
@@ -72,21 +78,7 @@ const Header = (props) => {
        
         <div  className={Style.gigantCentered} >
       
-            <AnchorLink className="px-4" href="#features">
-            <Link to='/' className={((props.type=='index')?'font-bold ':'')}> Inicio</Link>
-            </AnchorLink>
-            <AnchorLink className="px-4" href="#services">
-               <Link to='/location'className={((props.type=='location')?'font-bold':'')}>Ubicación</Link>
-            </AnchorLink>
-            <AnchorLink className="px-4" href="#stats">
-               <Link to='/catalogue'className={((props.type=='catalogue')?'font-bold':'')}>Catálogo</Link>
-            </AnchorLink>
-            <AnchorLink className="px-4" href="#stats">
-               <Link to='/info'className={((props.type=='info')?'font-bold':'')}>Nosotros</Link>
-            </AnchorLink>
-            <AnchorLink className="px-4" href="#testimonials">
-              <Link to='/contact'className={((props.type=='contact')?'font-bold':'')}>Contacto</Link>
-            </AnchorLink>
+        {pages}
          
         </div>
         </div>
