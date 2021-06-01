@@ -1,9 +1,5 @@
 import React from 'react'
-import {useStaticQuery, graphql} from 'gatsby'
 import Img from 'gatsby-image'
-import Card from '../Card';
-import {Link} from 'gatsby'
-import Style from './products.module.css'
 import { useState, useEffect, useRef } from "react"
 import useWidth from '../../hooks/useWidth.js'
 import useHeight from '../../hooks/useHeight.js'

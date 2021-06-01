@@ -11,7 +11,7 @@ import HeroImage from '../svg/HeroImage';
 import SvgCharts from '../svg/SvgCharts';
 import Fresas from '../components/productos/fresas'
 export default () => (
-  <Layout  type={'catalogue'}>
+  <Layout  type={'fresas'}>
     <div className="container mx-auto px-8 ">
     <section className="pt-20 md:pt-40">
       <div className="flex-1 px-3">
