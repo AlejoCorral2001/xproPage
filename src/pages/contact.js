@@ -17,9 +17,11 @@ export default () => (
         <Icons size={"auto"} />
       </div>
     </section>
-    <div className="rounded-lg">
-      { <iframe src="https://snapwidget.com/embed/940599" class="snapwidget-widget" allowtransparency="false" frameborder="0" scrolling="yes" style={{width:'300px', height:'300px', margin:'auto',marginTop:'3rem'}}></iframe> }
-    </div>
+      <div style={{width:"90%",maxWidth:"500px",boxSizing:"border-box",paddingBottom:"100%",position:"relative",margin:"auto"}}>
+      {<iframe src="https://snapwidget.com/embed/940599" class="snapwidget-widget" allowtransparency="false" frameborder="0" scrolling="yes" style={{width:"100%",height:"100%",position:"absolute",top:"0",left:"0"}}></iframe> }
+      </div>
+      
+
    
 
 
