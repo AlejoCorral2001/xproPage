@@ -4,6 +4,8 @@ import Img from 'gatsby-image'
 import Card from '../Card';
 import {Link} from 'gatsby'
 import Example from './example'
+import ConjuntoEjemplos from './conjuntoEjemplos'
+import {useState} from 'react'
 export default ()=>{
     const data = useStaticQuery(graphql`
     query{allContentfulExamples {
@@ -27,41 +29,44 @@ const examples = data.allContentfulExamples.nodes
 
 let materials = new Array();
 
-examples.map((node)=>{
+examples.map((node)=>{  //detecto que materiales tengo 
     if(materials.includes(node.material)==false){
         materials.push(node.material)
     }
     
 })
-const examplesFilter = (materialFilter) => {
+const examplesFilter = (materialFilter) => {    //devuelve todos lo ejemplos del material mandado como argumento
     let examplesFiltered = new Array()
     examples.map((node)=>{
         if(node.material==materialFilter){
             examplesFiltered.push(node)
         }
     })
-    console.log(examplesFiltered)  
+    
        return (
         examplesFiltered.map((example)=>(
             <Example example={example}/> 
         ))
        )
-      
-           
-      
+
         
 }
 
-
+const [indexOpened, setIndexOpened] = useState(0);
+const openExamples = (number) =>{
+    console.log("se presiono")
+    setIndexOpened(number+1)
+    
+}
+const close = () =>{
+    setIndexOpened(0)
+}
 return(
     <div className={"flex flex-col   sm:-mx-3 mt-12 justify-center"}>
     <p className='text-3xl md:text-5xl mx-auto font-semibold mb-10 uppercase text-primary-darker p-6 rounded-lg'>Ejemplos</p>
   {
-    materials.map((materialFiltering)=>(
-    <div className='my-6 bg-primary-lighter rounded-lg'>
-    <p className='text-3xl md:text-3x1 mx-auto font-bold mb-10  text-center uppercase  font-sans'>{materialFiltering}</p>
-    {examplesFilter(materialFiltering)}
-    </div>
+    materials.map((materialFiltering , index)=>(
+    <ConjuntoEjemplos material={materialFiltering} index={index} func={examplesFilter} opened={indexOpened==index+1?true:false} open={openExamples} close={close} />
   
 )
     )

@@ -39,13 +39,6 @@ const enlarge = (index) => {
 const fresas = data.allContentfulFresas.nodes
 let result=0;
 
-const stock = (obj)=>{if(obj.available==true){
-  return(<><div className={'h-16 w-16 rounded-full bg-green-500 absolute right-0 top-0 -mr-4 -mt-4 text-white flex justify-center'}><p className={'mt-auto mb-auto font-medium'}>stock</p> </div>
-<div className={'h-16 w-16 rounded-full bg-green-800 absolute right-0 top-0 -mr-4 -mt-4 animate-ping'}></div> </>)
-}else{
-  return(<><div className={'h-16 w-16 rounded-full bg-red-500 absolute right-0 top-0 -mr-4 -mt-4 text-white flex justify-center'}><p className={'mt-auto mb-auto font-medium text-center'}>agotado</p> </div>
-  <div className={'h-16 w-16 rounded-full bg-red-800 absolute right-0 top-0 -mr-4 -mt-4 animate-ping'}></div> </>)
-}}
 
 return(
     <div className="container mx-auto px-2 flex flex-wrap justify-center"> 

@@ -11,23 +11,24 @@ const click = (func, state) =>{
   func(state)
 }
 const Header = (props) => {
-  const [catalog,setCatalog] = useState(<p className={'text-primary-darker'}>catálogo</p>)
-  const [catalogOpened, setCatalogOpened] = useState(false)
-  const openCatalog = () =>{
-  
-      setCatalog(
-        (
-        <div className={'flex flex-col items-center text-primary-lighter'}>
-          <div onClick={()=>{setCatalogOpened(false); setCatalog(<p className={'text-primary-darker'}>catálogo</p>)}}>
-           catálogo:
-          </div>
-          <Link to='/catalogue'className={((props.type=='catalogue')?'font-bold':'')}>-Routers</Link>
-          <Link to='/fresas'className={((props.type=='fresas')?'font-bold':'')}>-Fresas</Link>
-        </div>
-        ))
-        setCatalogOpened(true)
-       
-    
+  const width = useWidth()
+  const [catalogOpened, setCatalogOpened] = useState((props.type=='catalogue')||(props.type=='fresas'))
+  const [widthCheck, setWidthCheck] = useState(false);
+  if(width>800 && widthCheck==false){
+    setWidthCheck(true)
+    setCatalogOpened(false)
+  }
+  const catalog =  (
+    <div className={'flex flex-col items-center text-primary-lighter'}>
+      <div onClick={()=>{openCatalog(false)}}>
+       catálogo:
+      </div>
+      <Link to='/catalogue'className={((props.type=='catalogue')?'font-bold':'')}>-Routers</Link>
+      <Link to='/fresas'className={((props.type=='fresas')?'font-bold':'')}>-Fresas</Link>
+    </div>
+    )
+  const openCatalog = (state) =>{ //con esta funcion cierro y abro el submenu de catalogo
+    setCatalogOpened(state)
   }
   
   const pages = (
@@ -38,8 +39,8 @@ const Header = (props) => {
     <AnchorLink className="px-4" href="#services">
        <Link to='/location'className={((props.type=='location')?'font-bold':'')}>Ubicación</Link>
     </AnchorLink>
-    <div className={(catalogOpened==true)?"px-4 bg-gray-300 rounded-lg":"px-4"}>
-       <div onClick={()=>openCatalog()}>
+    <div className={(catalogOpened==true)?"px-4 bg-gray-300 rounded-lg":"px-4"} style={{transition:"ease-in-out 0.5s all"}}>
+       <div onClick={()=>openCatalog(true)}>
        {(catalogOpened==false)?<p className={((props.type=='catalogue'||props.type=='fresas')?'font-bold text-primary':'text-primary')}>catálogo</p>:<></>}
        </div>
        {(catalogOpened==true)?catalog:<></>}
@@ -55,7 +56,8 @@ const Header = (props) => {
     </AnchorLink>
     </>)
     
-  const width = useWidth()
+  
+  
   const [opened, setOpened] = useState(0)
   let result=0
   if(width>800){

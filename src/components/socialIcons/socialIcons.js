@@ -45,7 +45,7 @@ export default (props) => {
           icon={faFacebookSquare}
         />
       </div>
-      </a>
+      </a>*/
       <a href="https://www.instagram.com/xprocncs/?hl=es-la">
       <div className={Style.InstagramDiv}>
         <FontAwesomeIcon
@@ -54,7 +54,7 @@ export default (props) => {
           icon={faInstagram}
         />
       </div>
-      </a> */}
+      </a> }
       <a href="https://api.whatsapp.com/send/?phone=5493517889350&text=Hola!+Me+comun%C3%ADco+desde+la+p%C3%A1gina+www.xprocncs.com">
       <div className={Style.WhatsappDiv}>
         <FontAwesomeIcon
