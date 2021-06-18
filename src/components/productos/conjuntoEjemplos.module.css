@@ -1,0 +1,31 @@
+.arrow{
+    width: 20px;
+    height:22px;
+   
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    transition: all linear 320ms;
+}
+.arrow::after{
+    content: '';
+    display: block;
+    transform: rotate(135deg);
+    width: 8px;
+    height: 25px;
+    background: #fff;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.arrow::before{
+    content: '';
+    display: block;
+    transform: rotate(45deg);
+    width: 8px;
+    height: 25px;
+    background: #fff;
+    position: absolute;
+    top:0;
+    right:0;
+}

@@ -54,7 +54,12 @@ const examplesFilter = (materialFilter) => {    //devuelve todos lo ejemplos del
 
 const [indexOpened, setIndexOpened] = useState(0);
 const openExamples = (number) =>{
-    setIndexOpened(number+1)
+    if(indexOpened==number+1){
+        setIndexOpened(0)
+    }else{
+        setIndexOpened(number+1)
+    }
+    
     
 }
 const close = () =>{
@@ -65,7 +70,7 @@ return(
     <p className='text-3xl md:text-5xl mx-auto font-semibold mb-10 uppercase text-primary-darker p-6 rounded-lg'>Ejemplos</p>
   {
     materials.map((materialFiltering , index)=>(
-    <ConjuntoEjemplos material={materialFiltering} index={index} func={examplesFilter} opened={indexOpened==index+1?true:false} open={openExamples} close={close} />
+    <ConjuntoEjemplos material={materialFiltering} index={index} func={examplesFilter} opened={indexOpened==index+1?true:false} switch={openExamples} />
   
 )
     )
