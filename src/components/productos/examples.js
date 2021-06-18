@@ -54,7 +54,6 @@ const examplesFilter = (materialFilter) => {    //devuelve todos lo ejemplos del
 
 const [indexOpened, setIndexOpened] = useState(0);
 const openExamples = (number) =>{
-    console.log("se presiono")
     setIndexOpened(number+1)
     
 }
