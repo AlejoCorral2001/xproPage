@@ -16,18 +16,17 @@ const Header = (props) => {
   const width = useWidth()
   const [catalogOpened, setCatalogOpened] = useState((props.type=='catalogue')||(props.type=='fresas'))
   const [widthCheck, setWidthCheck] = useState(false);
-  if(width>800 && widthCheck==false){
+  if(width>800 && widthCheck==false){ //se checkea si se actualizo la width si no se actualizo y la width es mayor a 800 se cierra el catalogo 
     setWidthCheck(true)
     setCatalogOpened(false)
   }
-  const catalog =  (
+  const catalog =  (  //se agrega al abrirse el catalogo
+    <Collapse isOpened={catalogOpened}>
     <div className={'flex flex-col items-center text-primary-lighter'}>
-      <div onClick={()=>{openCatalog(false)}}>
-       Catálogo:
-      </div>
       <Link to='/catalogue'className={((props.type=='catalogue')?'font-bold':'')}>-Routers</Link>
       <Link to='/fresas'className={((props.type=='fresas')?'font-bold':'')}>-Fresas</Link>
     </div>
+    </Collapse>
     )
   const openCatalog = (state) =>{ //con esta funcion cierro y abro el submenu de catalogo
     setCatalogOpened(state)
@@ -41,11 +40,11 @@ const Header = (props) => {
     <AnchorLink className="px-4" href="#services">
        <Link to='/location'className={((props.type=='location')?'font-bold':'')}>Ubicación</Link>
     </AnchorLink>
-    <div className={(catalogOpened==true)?"px-4 bg-gray-300 rounded-lg":"px-4"} style={{transition:"ease-in-out 0.5s all"}}>
-       <div onClick={()=>openCatalog(true)}>
-       {(catalogOpened==false)?<p className={((props.type=='catalogue'||props.type=='fresas')?'font-bold text-primary':'text-primary')}>Catálogo</p>:<></>}
+    <div  className={(catalogOpened==true)?"px-4 bg-gray-300 rounded-lg":"px-4"} >
+       <div>
+       <p  onClick={()=>openCatalog(!catalogOpened)} className={((props.type=='catalogue'||props.type=='fresas')?'font-bold text-primary':'text-primary')}>Catálogo</p>
        </div>
-       {(catalogOpened==true)?catalog:<></>}
+       {catalog}
     </div>
     <AnchorLink className="px-4" href="#examples">
     <Link to='/examples' className={((props.type=='examples')?'font-bold ':'')}>Ejemplos</Link>
