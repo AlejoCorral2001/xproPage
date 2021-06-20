@@ -14,7 +14,7 @@ export default (props) => {
         
         <div className="relative mt-6 ">
             
-            <div  className='bg-primary-lighter rounded-lg pb-4'>
+            <div  className='bg-primary-lighter rounded-lg '>
             <div className={Style.arrow} style={{transform:rotation}} onClick={()=>{props.switch(props.index)}}></div>
         
                  <p className='text-3xl md:text-3x1 mx-auto font-bold mb-6  text-center  uppercase  font-sans'>{materialFiltering}</p>

@@ -1,18 +1,18 @@
 .arrow{
-    width: 20px;
+    width: 22px;
     height:22px;
-   
     position: absolute;
     right: 20px;
     top: 10px;
     transition: all linear 320ms;
+
 }
 .arrow::after{
     content: '';
     display: block;
     transform: rotate(135deg);
-    width: 8px;
-    height: 25px;
+    width: 9px;
+    height: 27px;
     background: #fff;
     position: absolute;
     top:0;
@@ -22,8 +22,8 @@
     content: '';
     display: block;
     transform: rotate(45deg);
-    width: 8px;
-    height: 25px;
+    width: 9px;
+    height: 27px;
     background: #fff;
     position: absolute;
     top:0;

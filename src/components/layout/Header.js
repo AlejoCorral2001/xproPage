@@ -6,6 +6,8 @@ import {Link} from 'gatsby'
 import useWidth from '../../hooks/useWidth'
 import {useState} from 'react'
 import Style from './Header.module.css'
+import { Collapse } from 'react-collapse';
+
 
 const click = (func, state) =>{
   func(state)
@@ -21,7 +23,7 @@ const Header = (props) => {
   const catalog =  (
     <div className={'flex flex-col items-center text-primary-lighter'}>
       <div onClick={()=>{openCatalog(false)}}>
-       catálogo:
+       Catálogo:
       </div>
       <Link to='/catalogue'className={((props.type=='catalogue')?'font-bold':'')}>-Routers</Link>
       <Link to='/fresas'className={((props.type=='fresas')?'font-bold':'')}>-Fresas</Link>
@@ -41,7 +43,7 @@ const Header = (props) => {
     </AnchorLink>
     <div className={(catalogOpened==true)?"px-4 bg-gray-300 rounded-lg":"px-4"} style={{transition:"ease-in-out 0.5s all"}}>
        <div onClick={()=>openCatalog(true)}>
-       {(catalogOpened==false)?<p className={((props.type=='catalogue'||props.type=='fresas')?'font-bold text-primary':'text-primary')}>catálogo</p>:<></>}
+       {(catalogOpened==false)?<p className={((props.type=='catalogue'||props.type=='fresas')?'font-bold text-primary':'text-primary')}>Catálogo</p>:<></>}
        </div>
        {(catalogOpened==true)?catalog:<></>}
     </div>
