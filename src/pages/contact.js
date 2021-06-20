@@ -19,7 +19,7 @@ export default () => (
         <Icons size={"auto"} />
       </div>
       <div className="mx-auto mt-20">
-        <p className="text-center text-primary-darker text-3xl md:text-4xl  font-sans font-medium">-nueva cuenta de instagram!</p>
+        <p className="text-center text-primary-darker text-3xl md:text-4xl  font-sans font-medium">nueva cuenta de instagram!</p>
         <InstagramIframe/>
       </div>
     </section>

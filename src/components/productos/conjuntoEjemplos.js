@@ -4,17 +4,15 @@ import {Collapse} from 'react-collapse'
 import Style from './conjuntoEjemplos.module.css'
 export default (props) => {
     const opened = props.opened
-    const rotation=opened==true?"rotate(180deg)":""
+    const rotation=opened==true?"rotate(180deg)":"scale(1.25)"
     const materialFiltering = props.material
-    const cerrar = props.opened==true?(<div className="absolute right-0 top-0 mt-3 mr-3 bg-white rounded-lg text-primary-darker text-2xl  flex items-center justify-center p-auto font-bold w-20  h-8" style={{zIndex:"1"}} onClick={props.close}>
-    cerrar
-     </div>)
-     :<>hola</>
+    const width = props.opened?"100%":"300px"
+    const height = props.opened?"":"300px"
     return(<>
         
-        <div className="relative mt-6 ">
+        <div className="relative mt-6  " style={{width:width, height:height, margin:props.opened?"":"50px"}}>
             
-            <div  className='bg-primary-lighter rounded-lg '>
+            <div  className='bg-primary-lighter rounded-lg flex flex-col justify-center' style={{transition:"all ease-in-out 300ms",width:width, height:height}}>
             <div className={Style.arrow} style={{transform:rotation}} onClick={()=>{props.switch(props.index)}}></div>
         
                  <p className='text-3xl md:text-3x1 mx-auto font-bold mb-6  text-center  uppercase  font-sans'>{materialFiltering}</p>

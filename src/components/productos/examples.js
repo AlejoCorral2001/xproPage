@@ -66,8 +66,10 @@ const close = () =>{
     setIndexOpened(0)
 }
 return(
-    <div className={"flex flex-col   sm:-mx-3 mt-12 justify-center"}>
-    <p className='text-3xl md:text-5xl mx-auto font-semibold mb-10 uppercase text-primary-darker p-6 rounded-lg'>Ejemplos</p>
+    <>
+    <p className='text-3xl md:text-5xl mx-auto font-semibold mb-10 uppercase text-primary-darker p-6 rounded-lg text-center'>Ejemplos</p>
+    <div className={"flex flex-row  flex-wrap sm:-mx-3 mt-12 justify-center items-center align-baseline "}>
+    
   {
     materials.map((materialFiltering , index)=>(
     <ConjuntoEjemplos material={materialFiltering} index={index} func={examplesFilter} opened={indexOpened==index+1?true:false} switch={openExamples} />
@@ -79,6 +81,6 @@ return(
           
 
     </div>
-    
+    </>
 )
 }
