@@ -21,7 +21,7 @@ const Header = (props) => {
     setCatalogOpened(false)
   }
   const catalog =  (  //se agrega al abrirse el catalogo
-    <Collapse isOpened={catalogOpened}>
+    <Collapse isOpened={catalogOpened} theme={{collapse: "rapid-collapse"}}>
     <div className={'flex flex-col items-center text-primary-lighter'}>
       <Link to='/catalogue'className={((props.type=='catalogue')?'font-bold':'')}>-Routers</Link>
       <Link to='/fresas'className={((props.type=='fresas')?'font-bold':'')}>-Fresas</Link>
