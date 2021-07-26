@@ -14,6 +14,7 @@ export default () => (
   <Layout  type={'catalogue'}>
     <div className="mx-auto px-4 md:mx-24">
     <section className="pt-20">
+    <p className='text-center text-primary text-3xl font-semibold'>ROUTERS</p>
       <Product/>
  
     </section>

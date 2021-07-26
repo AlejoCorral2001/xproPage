@@ -64,7 +64,7 @@ return(
 
 
   ))}
-            <Link to={'/fresas'} className=" m-4 hover:shadow-xl hover:bg-gray-200 relative border-gray-200 border-solid border   md:w-5/12" >
+            {/*<Link to={'/fresas'} className=" m-4 hover:shadow-xl hover:bg-gray-200 relative border-gray-200 border-solid border   md:w-5/12" >
             {stock({stock:true})}
             <Card>
               <p className="font-semibold text-xl text-center mb-4">FRESAS</p>
@@ -73,7 +73,7 @@ return(
                 <Img className={'rounded-lg'}fluid={data.imageSharp.fluid}/>
               </div>
             </Card>
-            </Link>
+            </Link>*/}
 
     </div>
     

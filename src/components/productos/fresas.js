@@ -41,7 +41,7 @@ let result=0;
 
 
 return(
-    <div className="container mx-auto px-2 flex flex-wrap justify-center"> 
+    <div className=" mx-auto px-2 flex flex-wrap justify-center"> 
   {fresas.map((node, index)=>(
     <Fresa obj={node} size={bigOne==index+1?true:false} func={() => {enlarge(index)}}/>
   ))}

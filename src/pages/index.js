@@ -16,9 +16,15 @@ import {useState, useEffect} from 'gatsby'
 export default ({data}) => {
   return(
     <Layout  type={'index'}>
-    <section className="pt-20 md:pt-40">
-  
+    <section className="pt-5 md:pt-20">
+    <div className='mb-32'>
+    <h1 className='text-center text-5xl lg:text-6xl xl:text-6xl font-bold leading-none'>X-PRO</h1>
+    <p className='text-center text-2xl lg:text-3xl xl:text-4xl text-primary-darker'>CNCs</p>
+    <p className='text-center  lg:text-2xl xl:text-3xl text-primary'>Fabricantes de routers numéricos</p>
+    </div>
       <div className="container mx-auto px-8 lg:flex">
+
+        
         <div className="text-center lg:text-left lg:w-1/2">
           <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none">
             Comodidad y simpleza en una sola pieza

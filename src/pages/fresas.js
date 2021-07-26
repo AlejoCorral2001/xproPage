@@ -14,6 +14,7 @@ export default () => (
   <Layout  type={'fresas'}>
     <div className="container mx-auto px-8 ">
     <section className="pt-20 md:pt-40">
+    <p className='text-center text-primary text-3xl font-semibold mb-10'>FRESAS</p>
       <div className="flex-1 px-3">
          <Fresas/>
         
