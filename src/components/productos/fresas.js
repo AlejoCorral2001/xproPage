@@ -93,7 +93,11 @@ const comprar = () => {
  window.open(msg ,"_top")
 
 }
-  
+const vaciar = () =>{
+  setCantidadesEstado(cantidadesGenerator)
+  setTotalActualizado(0)
+
+}
 return(
   <>
     <div className="container mx-auto px-2 flex flex-wrap justify-center"> 
@@ -101,7 +105,12 @@ return(
     <Fresa obj={node} size={bigOne==index+1?true:false} add={()=>add(index)} remove={()=>remove(index)} func={() => {enlarge(index)}} cantidad={cantidadesEstado[index]}/>
   ))}
     </div>
-    <div className='sticky  flex justify-center bg-gray-400 rounded-lg mx-auto p-6 mt-8 ' style={{width:"fit-content",bottom:"25px", display:totalActualizado>0?"":"none"}}> <p className='text-2xl md:text-3xl text-primary'>{"Total: $"+totalActualizado}</p></div>
+    <div className='sticky  flex justify-center bg-gray-400 rounded-lg mx-auto  mt-8 ' style={{width:"fit-content",bottom:"25px", display:totalActualizado>0?"":"none"}}>
+    <p className='text-2xl md:text-3xl text-primary p-3'>{"Total: $"+totalActualizado}</p>
+    <div className='flex justify-center bg-red-600 hover:bg-red-700 rounded-lg' onClick={vaciar}>
+      <p className=' text-white  text-center text-sm my-auto px-2 md:px-4 md:text-xl font-sans font-semibold'>VACIAR</p></div>
+    </div>
+    
     <div className='flex justify-center bg-gray-400 rounded-lg mx-auto p-6 mt-12 hover:bg-gray-500 shadow-lg' style={{width:"fit-content"}} onClick={comprar}> <p className='text-3xl md:text-5xl text-primary'>COMPRAR</p></div>
     
     </>
