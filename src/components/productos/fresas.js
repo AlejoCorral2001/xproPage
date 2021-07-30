@@ -47,6 +47,7 @@ for (let i=0; i<fresas.length; i++){
 const [cantidadesEstado, setCantidadesEstado] = useState(cantidadesGenerator)
 let cantidades = cantidadesEstado
 
+const [totalActualizado, setTotalActualizado] = useState(0)
 const [actualizar, setActualizar] = useState(0)
 
 const add = (index) =>{
@@ -54,6 +55,13 @@ const add = (index) =>{
   arr[index] = arr[index]+1
   setCantidadesEstado(arr)
   setActualizar(!actualizar)
+  let total=0
+  for (let i=0; i<fresas.length; i++){
+    if(cantidadesEstado[i]!=0){
+      total = total + parseInt(fresas[i].price.substr(1, fresas[i].price.length)) * cantidadesEstado[i]
+    }
+  }
+  setTotalActualizado(total)
 
 }
 const remove = (index) =>{
@@ -61,6 +69,13 @@ const remove = (index) =>{
   arr[index] = arr[index]>0?arr[index]-1:0
   setCantidadesEstado(arr)
   setActualizar(!actualizar)
+  let total=0
+  for (let i=0; i<fresas.length; i++){
+    if(cantidadesEstado[i]!=0){
+      total = total + parseInt(fresas[i].price.substr(1, fresas[i].price.length)) * cantidadesEstado[i]
+    }
+  }
+  setTotalActualizado(total)
   }
 
 const comprar = () => {
@@ -86,8 +101,9 @@ return(
     <Fresa obj={node} size={bigOne==index+1?true:false} add={()=>add(index)} remove={()=>remove(index)} func={() => {enlarge(index)}} cantidad={cantidadesEstado[index]}/>
   ))}
     </div>
-
-    <div className='flex justify-center bg-gray-400 rounded-lg mx-auto p-6 mt-12' style={{width:"fit-content"}} onClick={comprar}> <p className='text-3xl md:text-5xl text-primary'>COMPRAR</p></div>
+    <div className='sticky  flex justify-center bg-gray-400 rounded-lg mx-auto p-6 mt-8 ' style={{width:"fit-content",bottom:"25px", display:totalActualizado>0?"":"none"}}> <p className='text-2xl md:text-3xl text-primary'>{"Total: $"+totalActualizado}</p></div>
+    <div className='flex justify-center bg-gray-400 rounded-lg mx-auto p-6 mt-12 hover:bg-gray-500 shadow-lg' style={{width:"fit-content"}} onClick={comprar}> <p className='text-3xl md:text-5xl text-primary'>COMPRAR</p></div>
+    
     </>
     
 )
