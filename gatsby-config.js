@@ -6,7 +6,13 @@ if (process.env.NODE_ENV != 'production') {
 }
 
 module.exports = {
+  siteMetadata: {
+    title: `Xpro CNC's`,
+    description: 'Fabricantes de routers numéricos',
+    siteUrl: `https://www.xprocncs.com/`
+  },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-fontawesome-css`,
@@ -39,8 +45,8 @@ module.exports = {
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `standalone`,
-        icon: `src/logo/logo2.png`, // This path is relative to the root of the site.
-      },
+        icon: `src/logo/logo2.png` // This path is relative to the root of the site.
+      }
     }
     // },`gatsby-plugin-offline`,
   ]
