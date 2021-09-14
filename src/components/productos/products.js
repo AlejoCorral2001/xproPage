@@ -51,11 +51,12 @@ return(
   {models.map((node)=>(
     <Link to={'/'+node.title} className=" m-4 hover:shadow-xl hover:bg-gray-200 relative border-gray-200 border-solid border md:w-5/12" >
             {stock(node)}
-            <Card>
+            <Card style={{position:"relative"}}>
               <p className="font-semibold text-xl text-center mb-4">{node.title}</p>
             <div >
                 <Img className={'rounded-lg'}fluid={node.images[0].fluid}/>
             </div>
+            <p className="text-center mt-8 font-bold text-primary-darker text-lg bg-gray-400 mx-auto p-5 rounded-lg" style={{width:"fit-content"}}>Mas Información</p>
             </Card>
             </Link>
    
