@@ -13,11 +13,11 @@ import Gmap from '../components/gMaps/gMaps'
 import Img from 'gatsby-image'
 import Insta from '../components/instagram/instagram'
 import {useState, useEffect} from 'gatsby'
-import Seo from '../components/seo'
+import Seo from '../components/Seo'
 export default ({data}) => {
   return(
     <Layout  type={'index'}>
-    
+    <Seo/> 
     <section className="pt-5 md:pt-20">
     <div className='mb-20'>
     <h1 className='text-center text-5xl lg:text-6xl xl:text-6xl font-bold leading-none'>X-PRO</h1>
