@@ -9,14 +9,15 @@ import StatsBox from '../components/StatsBox';
 import customerData from '../data/customer-data';
 import HeroImage from '../svg/HeroImage';
 import SvgCharts from '../svg/SvgCharts';
-import Examples from '../components/productos/examples'
+import Examples from '../components/productos/examples';
+import Seo from '../components/Seo';
 export default () => (
-  <Layout  type={'examples'}>
+  <Layout type={'examples'}>
+    <Seo title="Ejemplos" />
     <div className="mx-auto px-4 md:mx-24">
-    <section className="pt-20">
-      <Examples/>
- 
-    </section>
+      <section className="pt-20">
+        <Examples />
+      </section>
     </div>
   </Layout>
 );

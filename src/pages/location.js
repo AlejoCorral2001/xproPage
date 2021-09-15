@@ -9,15 +9,18 @@ import StatsBox from '../components/StatsBox';
 import customerData from '../data/customer-data';
 import HeroImage from '../svg/HeroImage';
 import SvgCharts from '../svg/SvgCharts';
-import Map from '../components/gMaps/gMaps'
+import Seo from '../components/Seo';
+import Map from '../components/gMaps/gMaps';
 export default () => (
   <Layout type={'location'}>
+    <Seo title="Ubicación" />
     <section className="max-w-full">
-    <br/>
-     <Map/>
-     <br/>
-     <p className='text-center font-sans'>Estamos ubicados en la zona de quintas de Arguello, Córdoba Capital, Argentina</p>
+      <br />
+      <Map />
+      <br />
+      <p className="text-center font-sans">
+        Estamos ubicados en la zona de quintas de Arguello, Córdoba Capital, Argentina
+      </p>
     </section>
-  
   </Layout>
 );
