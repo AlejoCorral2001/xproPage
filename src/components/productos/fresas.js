@@ -107,11 +107,16 @@ return(
     </div>
     <div className='sticky  flex justify-center bg-gray-400 rounded-lg mx-auto  mt-8 ' style={{width:"fit-content",bottom:"25px", display:totalActualizado>0?"":"none"}}>
     <p className='text-2xl md:text-3xl text-primary p-3'>{"Total: $"+totalActualizado}</p>
-    <div className='flex justify-center bg-red-600 hover:bg-red-700 rounded-lg' onClick={vaciar}>
-      <p className=' text-white  text-center text-sm my-auto px-2 md:px-4 md:text-xl font-sans font-semibold'>VACIAR</p></div>
+    <div className='flex justify-center bg-green-600 hover:bg-green-700 rounded-lg rounded-r-none' onClick={comprar}>
+      <p className=' text-white  text-center text-sm my-auto px-2 md:px-4 md:text-xl font-sans font-semibold'>COMPRAR</p>
+    </div>
+    <div className='flex justify-center bg-red-600 hover:bg-red-700 rounded-lg rounded-l-none' onClick={vaciar}>
+      <p className=' text-white  text-center text-sm my-auto px-2 md:px-4 md:text-xl font-sans font-semibold'>VACIAR</p>
+    </div>
+      
     </div>
     
-    <div className='flex justify-center bg-gray-400 rounded-lg mx-auto p-6 mt-12 hover:bg-gray-500 shadow-lg' style={{width:"fit-content"}} onClick={comprar}> <p className='text-3xl md:text-5xl text-primary'>COMPRAR</p></div>
+   
     
     </>
     
