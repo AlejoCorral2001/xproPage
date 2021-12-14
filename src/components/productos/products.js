@@ -18,6 +18,7 @@ query{
           nodes {
             title
             stock
+            price
             description {
               description
             }
@@ -56,7 +57,9 @@ return(
             <div >
                 <Img className={'rounded-lg'}fluid={node.images[0].fluid}/>
             </div>
+            <p className="text-center mt-8 font-bold text-primary text-lg md:text-2xl mx-auto p-5 rounded-lg" style={{width:"fit-content"}}>{node.price}</p>
             <p className="text-center mt-8 font-bold text-primary-darker text-lg bg-gray-400 mx-auto p-5 rounded-lg" style={{width:"fit-content"}}>Mas Información</p>
+            
             </Card>
             </Link>
    
