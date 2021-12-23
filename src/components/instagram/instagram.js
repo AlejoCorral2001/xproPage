@@ -23,10 +23,10 @@ export default (props) => {
   }
  
   if (props.width&&useWidthVar>1023) {
-    width = (useHeightVar - 150< useWidthVar? (useHeightVar - 150)*0.8: (props.width / 100) * useWidthVar)
+    width = (useHeightVar - 150< useWidthVar? (useHeightVar - 150): (props.width / 100) * useWidthVar)
    
   } else {
-    width = (useHeightVar - 150< useWidthVar? useHeightVar - 150: useWidthVar)*0.8
+    width = (useHeightVar - 75< useWidthVar? useHeightVar -90: useWidthVar-90)
   }
   const backButton = () => {
     stopTimer()
