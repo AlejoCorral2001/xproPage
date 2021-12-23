@@ -1,7 +1,10 @@
+
+
 .centered{
     position: relative;
     display: flex;
     transition: 1s ease-in-out;
+    align-items: center
    
 }
 .screen{
@@ -13,22 +16,16 @@
 
 
 .img{ 
-    min-width: 100%;
     
-   
+    min-width: 100%;
 }
 .imgF{
-    margin: 10px;
     transition: 1s ease-in-out;
     border-radius: 0.8%;
-  
-   
 }
 
 .effect {
- 
     border-radius: 0.7%;
-    margin: 10px;
     transition: 1s ease-in-out;
     animation: effect 2s 1;
     

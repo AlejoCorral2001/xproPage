@@ -23,10 +23,10 @@ export default (props) => {
   }
  
   if (props.width&&useWidthVar>1023) {
-    width = (props.width / 100) * useWidthVar
+    width = (useHeightVar - 150< useWidthVar? (useHeightVar - 150)*0.8: (props.width / 100) * useWidthVar)
    
   } else {
-    width = (useHeightVar - 150< useWidthVar? useHeightVar - 150: useWidthVar)*0.85
+    width = (useHeightVar - 150< useWidthVar? useHeightVar - 150: useWidthVar)*0.8
   }
   const backButton = () => {
     stopTimer()
@@ -169,13 +169,16 @@ const data = useStaticQuery(graphql`
       const text = (topPercent.toString()+"%")
     
       return (
-        <div className={Style.img} key={index}>
-        
-          <Img
+        <div className={Style.img}  key={index}>
+     
+            <Img
             className={(bShadow == 1 ? Style.effect : Style.imgF)}
-            style={{top:text}}
+            //style={{top:text}}
             fluid={node.childImageSharp.fluid}
-          />
+            />
+
+       
+
          
         </div>
       )

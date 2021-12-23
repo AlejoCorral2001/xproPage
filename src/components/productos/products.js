@@ -41,16 +41,16 @@ let result=0;
 
 const stock = (obj)=>{if(obj.stock==true){
   return(<><div className={'h-16 w-16 rounded-full bg-green-500 absolute right-0 top-0 -mr-4 -mt-4 text-white flex justify-center'}><p className={'mt-auto mb-auto font-medium'}>stock</p> </div>
-<div className={'h-16 w-16 rounded-full bg-green-800 absolute right-0 top-0 -mr-4 -mt-4 animate-ping'}></div> </>)
+<div className={'h-16 w-16 rounded-full bg-green-800 absolute right-0 top-0 -mr-4 -mt-4 md:animate-ping opacity-0 md:opacity-100'}></div> </>)
 }else{
   return(<><div className={'h-16 w-16 rounded-full bg-red-500 absolute right-0 top-0 -mr-4 -mt-4 text-white flex justify-center'}><p className={'mt-auto mb-auto font-medium text-center'}>agotado</p> </div>
-  <div className={'h-16 w-16 rounded-full bg-red-800 absolute right-0 top-0 -mr-4 -mt-4 animate-ping'}></div> </>)
+  <div className={'h-16 w-16 rounded-full bg-red-800 absolute right-0 top-0 -mr-4 -mt-4 md:animate-ping opacity-0 md:opacity-100'}></div> </>)
 }}
 
 return(
     <div className={"flex flex-col  md:flex-row md:flex-wrap sm:-mx-3 mt-12 justify-center"}>
   {models.map((node)=>(
-    <Link to={'/'+node.title} className=" m-4 hover:shadow-xl hover:bg-gray-200 relative border-gray-200 border-solid border md:w-5/12" >
+    <Link to={'/'+node.title} className=" m-6 hover:shadow-xl hover:bg-gray-200 relative border-gray-200 border-solid border md:w-5/12" >
             {stock(node)}
             <Card style={{position:"relative"}}>
               <p className="font-semibold text-xl text-center mb-4">{node.title}</p>
