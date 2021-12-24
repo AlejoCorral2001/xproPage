@@ -36,8 +36,8 @@ example.images.map((node)=>{
 
 const heightRaw = useHeight()
 let height = width * 1/aspectMin
-if (height > heightRaw - 200 ){
-  width = (heightRaw - 200) * aspectMin
+if (height > heightRaw - 100 ){
+  width = (heightRaw - 100) * aspectMin
 }
 if(width>widthRaw-350 && widthRaw>700){
   width = widthRaw-350
@@ -48,10 +48,10 @@ const maxHeight = (width  / aspectMin)+100
 
 return(
  
-    <div onClick={changeImage} className= {"relative   rounded-lg mx-auto bg-primary-lighter "}  style={{height:maxHeight+'px', width:(width+100)+'px'}} >
+    <div onClick={changeImage} className= {"relative   rounded-lg mx-auto bg-primary-lighter overflow-hidden"}  style={{height:(maxHeight>200?maxHeight:maxHeight+200)+'px', width:(width+100)+'px'}} >
               <p className="font-semibold md:text-4xl text-3xl  text-center mb-4 font-sans text-gray-100">{example.title}</p>
             <div className='flex items-center align-middle' style={{height:(maxHeight-100)+'px'}}>
-                <Img   className={'rounded-lg mx-auto'} fluid={example.images[pictureNumber].fluid}  style={{width:width}}/>
+                <Img   className={'rounded-lg mx-auto '} fluid={example.images[pictureNumber].fluid}  style={{width:width}}/>
             </div>
     </div>
 
