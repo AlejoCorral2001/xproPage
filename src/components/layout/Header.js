@@ -12,13 +12,16 @@ import { Collapse } from 'react-collapse';
 const click = (func, state) =>{
   func(state)
 }
+
 const Header = (props) => {
   const width = useWidth()
   const [catalogOpened, setCatalogOpened] = useState((props.type=='catalogue')||(props.type=='fresas'))
+  const [examplesOpened, setExamplesOpened] = useState((props.type=='examples')||(props.type=='videos'))
   const [widthCheck, setWidthCheck] = useState(false);
   if(width>800 && widthCheck==false){ //se checkea si se actualizo la width si no se actualizo y la width es mayor a 800 se cierra el catalogo 
     setWidthCheck(true)
     setCatalogOpened(false)
+    setExamplesOpened(false)
   }
   const catalog =  (  //se agrega al abrirse el catalogo
     <Collapse isOpened={catalogOpened} theme={{collapse: "rapid-collapse"}}>
@@ -28,10 +31,21 @@ const Header = (props) => {
     </div>
     </Collapse>
     )
+
+    const examples =  (  //se agrega al abrirse el catalogo
+      <Collapse isOpened={examplesOpened} theme={{collapse: "rapid-collapse"}}>
+      <div className={'flex flex-col items-center text-primary-lighter'}>
+        <Link to='/examples'className={((props.type=='examples')?'font-bold':'')}>Trabajos</Link>
+        <Link to='/videos'className={((props.type=='videos')?'font-bold':'')}>Videos</Link>
+      </div>
+      </Collapse>
+      )
   const openCatalog = (state) =>{ //con esta funcion cierro y abro el submenu de catalogo
     setCatalogOpened(state)
   }
-  
+  const openExamples = (state) =>{ //con esta funcion cierro y abro el submenu de ejemplos
+    setExamplesOpened(state)
+  }
   const pages = (
     <>
     <AnchorLink className="px-4" href="#features">
@@ -46,9 +60,12 @@ const Header = (props) => {
        </div>
        {catalog}
     </div>
-    <AnchorLink className="px-4" href="#examples">
-    <Link to='/examples' className={((props.type=='examples')?'font-bold ':'')}>Ejemplos</Link>
-    </AnchorLink>
+    <div  className={(examplesOpened==true)?"px-4 bg-gray-300 rounded-lg":"px-4"} >
+       <div>
+       <p  onClick={()=>openExamples(!examplesOpened)} className={((props.type=='examples'||props.type=='videos')?'font-bold text-primary':'text-primary')}>Ejemplos</p>
+       </div>
+       {examples}
+    </div>
     <AnchorLink className="px-4" href="#stats">
        <Link to='/info'className={((props.type=='info')?'font-bold':'')}>Nosotros</Link>
     </AnchorLink>
@@ -58,6 +75,14 @@ const Header = (props) => {
     </>)
     
   
+
+
+
+
+
+
+
+
   
   const [opened, setOpened] = useState(0)
   let result=0
