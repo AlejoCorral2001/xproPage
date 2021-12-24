@@ -66,6 +66,7 @@ const openExamples = (number) =>{
     if(indexOpened!=number+1){
         setIndexOpened(number+1)  
     }
+    
        
 }
 const close = () =>{
@@ -78,7 +79,7 @@ return(
     
   {
     materials.map((materialFiltering , index)=>(
-    <ConjuntoEjemplos material={materialFiltering} index={index} func={examplesFilter} opened={indexOpened==index+1?true:false} switch={switchExamples} open={openExamples} />
+    <ConjuntoEjemplos  material={materialFiltering} index={index} func={examplesFilter} opened={indexOpened==index+1?true:false} switch={switchExamples} open={openExamples} />
   
 )
     )
