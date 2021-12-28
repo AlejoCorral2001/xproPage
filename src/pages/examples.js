@@ -15,7 +15,6 @@ export default () => (
     <div className="mx-auto px-4 md:mx-24">
     <section className="pt-20">
       <Examples/>
- 
     </section>
     </div>
   </Layout>

@@ -1,13 +1,12 @@
 import React from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import LogoIcon from '../../svg/LogoIcon';
-import Button from '../Button';
 import {Link} from 'gatsby'
 import useWidth from '../../hooks/useWidth'
 import {useState} from 'react'
 import Style from './Header.module.css'
 import { Collapse } from 'react-collapse';
-
+import Submenu from './submenu'
 
 const click = (func, state) =>{
   func(state)
@@ -15,37 +14,14 @@ const click = (func, state) =>{
 
 const Header = (props) => {
   const width = useWidth()
-  const [catalogOpened, setCatalogOpened] = useState((props.type=='catalogue')||(props.type=='fresas'))
-  const [examplesOpened, setExamplesOpened] = useState((props.type=='examples')||(props.type=='videos'))
-  const [widthCheck, setWidthCheck] = useState(false);
-  if(width>800 && widthCheck==false){ //se checkea si se actualizo la width si no se actualizo y la width es mayor a 800 se cierra el catalogo 
-    setWidthCheck(true)
-    setCatalogOpened(false)
-    setExamplesOpened(false)
-  }
-  const catalog =  (  //se agrega al abrirse el catalogo
-    <Collapse isOpened={catalogOpened} theme={{collapse: "rapid-collapse"}}>
-    <div className={'flex flex-col items-center text-primary-lighter'}>
-      <Link to='/catalogue'className={((props.type=='catalogue')?'font-bold':'')}>Routers</Link>
-      <Link to='/fresas'className={((props.type=='fresas')?'font-bold':'')}>Fresas</Link>
-    </div>
-    </Collapse>
-    )
+  const [closeAll, setCloseAll] = useState(false)
+  //const [widthCheck, setWidthCheck] = useState(false);
+  //if(width>800 && widthCheck==false){ //se checkea si se actualizo la width si no se actualizo y la width es mayor a 800 se cierra el catalogo 
+  //  setWidthCheck(true)
+  //  setCatalogOpened(false)
+  //  setExamplesOpened(false)
+  //}
 
-    const examples =  (  //se agrega al abrirse el catalogo
-      <Collapse isOpened={examplesOpened} theme={{collapse: "rapid-collapse"}}>
-      <div className={'flex flex-col items-center text-primary-lighter'}>
-        <Link to='/examples'className={((props.type=='examples')?'font-bold':'')}>Trabajos</Link>
-        <Link to='/videos'className={((props.type=='videos')?'font-bold':'')}>Videos</Link>
-      </div>
-      </Collapse>
-      )
-  const openCatalog = (state) =>{ //con esta funcion cierro y abro el submenu de catalogo
-    setCatalogOpened(state)
-  }
-  const openExamples = (state) =>{ //con esta funcion cierro y abro el submenu de ejemplos
-    setExamplesOpened(state)
-  }
   const pages = (
     <>
     <AnchorLink className="px-4" href="#features">
@@ -54,35 +30,16 @@ const Header = (props) => {
     <AnchorLink className="px-4" href="#services">
        <Link to='/location'className={((props.type=='location')?'font-bold':'')}>Ubicación</Link>
     </AnchorLink>
-    <div  className={(catalogOpened==true)?"px-4 bg-gray-300 rounded-lg":"px-4"} >
-       <div>
-       <p  onClick={()=>openCatalog(!catalogOpened)} className={((props.type=='catalogue'||props.type=='fresas')?'font-bold text-primary':'text-primary')}>Catálogo</p>
-       </div>
-       {catalog}
-    </div>
-    <div  className={(examplesOpened==true)?"px-4 bg-gray-300 rounded-lg":"px-4"} >
-       <div>
-       <p  onClick={()=>openExamples(!examplesOpened)} className={((props.type=='examples'||props.type=='videos')?'font-bold text-primary':'text-primary')}>Ejemplos</p>
-       </div>
-       {examples}
-    </div>
+    <Submenu props={props} defaultOpened={width<800} name={"Catálogo"} links={[["Routers","catalogue"],["Fresas","fresas"]]}/>
+    <Submenu props={props} defaultOpened={width<800} name={"Ejemplos"} links={[["Trabajos","examples"],["Videos","videos"]]}/>
     <AnchorLink className="px-4" href="#stats">
        <Link to='/info'className={((props.type=='info')?'font-bold':'')}>Nosotros</Link>
     </AnchorLink>
     <AnchorLink className="px-4" href="#testimonials">
       <Link to='/contact'className={((props.type=='contact')?'font-bold':'')}>Contacto</Link>
     </AnchorLink>
-    </>)
     
-  
-
-
-
-
-
-
-
-
+    </>)
   
   const [opened, setOpened] = useState(0)
   let result=0

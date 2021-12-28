@@ -11,16 +11,28 @@ export default function cnc ({data}){
     return(
         <Layout>
         
-        <section className="pt-20 md:pt-40 " >
+        <section className="pt-16 md:pt-32 " >
         <div className="container mx-auto px-8 lg:flex flex-col">
      
-               <div className="text-center text-3xl lg:text-5xl xl:text-6xl font-bold leading-none">{machine.title}</div>
+               <div className="text-center text-3xl lg:text-4xl xl:text-5xl font-bold leading-none mb-4 lg:mb-8">{machine.title}</div>
         <br/>
     
-        <Carousel width={55} src={machine.images}/>
+        <Carousel width={60} src={machine.images}/>
       
      
         <br/>
+
+        <br/>
+        <div className={'bg-blue-200 p-4 rounded-lg'}><p className={'font-serif'}>{machine.description.description}</p></div>
+        <br/>
+        <Specification obj={machine.features}/>
+        <br/>
+        <p className={'bg-blue-200 p-5 rounded-lg animate-pulse'}>✴Junto a la compra del router se entregan una serie de videos para poder empezar a usarla en tan solo 90 minutos. En ellos se explica como generar el código que reciben las máquinas como también la forma de enviárselo y poder realizar piezas sin perder tiempo.</p>
+        <br/>
+        <p className={'bg-blue-300 p-5 rounded-lg text-xl text-center'}>{machine.price}</p>
+        <br/>
+        <p className={machine.stock?'text-center font-medium text-xl bg-green-400 p-3 rounded-lg':'text-center font-medium text-xl bg-red-400 p-3 rounded-lg'}>{machine.stock?'Este producto se encuentra en stock':'Este producto no se encuentra en stock'}</p>
+       
         <div className="flex flex-col sm:flex-row sm:-mx-3 mt-12">
           <div className="flex-1 px-3">
             <Card className="mb-8">
@@ -47,19 +59,8 @@ export default function cnc ({data}){
             </Card>
           </div>
         </div>
-        <br/>
-        <div className={'bg-blue-200 p-4 rounded-lg'}><p className={'font-serif'}>{machine.description.description}</p></div>
-        <br/>
-        <Specification obj={machine.features}/>
-        <br/>
-        <p className={'bg-blue-200 p-5 rounded-lg animate-pulse'}>✴Junto a la compra del router se entregan una serie de videos para poder empezar a usarla en tan solo 90 minutos. En ellos se explica como generar el código que reciben las máquinas como también la forma de enviárselo y poder realizar piezas sin perder tiempo.</p>
-        <br/>
-        <p className={'bg-blue-300 p-5 rounded-lg text-xl text-center'}>{machine.price}</p>
-        <br/>
-        <p className={machine.stock?'text-center font-medium text-xl bg-green-400 p-3 rounded-lg':'text-center font-medium text-xl bg-red-400 p-3 rounded-lg'}>{machine.stock?'Este producto se encuentra en stock':'Este producto no se encuentra en stock'}</p>
-       
-       
         </div>
+        
         </section>
         </Layout>
      

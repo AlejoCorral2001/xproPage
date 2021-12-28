@@ -17,7 +17,7 @@ export default (props) => {
   const [timerId,setTimerId]=useState(0);
   const [timerRestartId,setTimerRestartId]=useState(null);
   const [forcedUpdate, setforcedUpdate] = useState(false);
-  
+  console.log(useWidthVar)
   const updateDom = () => {
     setforcedUpdate(!forcedUpdate)
   }
@@ -26,7 +26,7 @@ export default (props) => {
     width = (useHeightVar - 150< useWidthVar? (useHeightVar - 150): (props.width / 100) * useWidthVar)
    
   } else {
-    width = (useHeightVar - 75< useWidthVar? useHeightVar -90: useWidthVar-90)
+    width = (useHeightVar - 75< useWidthVar? useHeightVar -150: useWidthVar-200)
   }
   const backButton = () => {
     stopTimer()
