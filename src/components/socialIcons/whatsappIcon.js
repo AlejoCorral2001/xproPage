@@ -9,7 +9,7 @@ import {
     const width = useWidth()
     let size = width<1000?'2x':"3x"
     if(props.size!=null){
-       size = Math.round(width/300)<4?'3x':Math.round(width/400)+'x'   
+       size = Math.round(width/450)<4?'3x':Math.round(width/450)+'x'   
     }
     return (
             <a href="https://api.whatsapp.com/send/?phone=5493517889350&text=Hola!+Me+comun%C3%ADco+desde+la+p%C3%A1gina+www.xprocncs.com">
