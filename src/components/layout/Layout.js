@@ -33,6 +33,7 @@ const [content, setContent] = useState(
  setTimeout(() => {setContent((
   <>
     <Header type={props.type}/>
+    <Whatsapp size={"auto"} className="fixed"/>
     <main className="text-gray-900">{props.children}</main>
     <Footer type={props.type}/>
   </>
@@ -49,7 +50,7 @@ const [content, setContent] = useState(
 
 else{
   return (
-    <div className="relative">
+    <div>
     <Header type={props.type}/>
     <Whatsapp size={"auto"} className="fixed"/>
     <main className="text-gray-900">{props.children}</main>

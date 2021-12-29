@@ -33,8 +33,8 @@ export default function cnc ({data}){
               <br/>
               <p className={machine.stock?'text-center font-medium text-xl bg-green-400 p-3 rounded-lg':'text-center font-medium text-xl bg-red-400 p-3 rounded-lg'}>{machine.stock?'Este producto se encuentra en stock':'Este producto no se encuentra en stock'}</p>
               
-              <p onClick={comprar} className={'mx-auto relative mt-5 text-center text-2xl lg:text-3xl  bg-primary-lighter text-white font-semibold   rounded-lg shadow-md'} style={{width:"fit-content"}}>
-              <div className='px-5 py-2'>Comprar</div>
+              <p onClick={comprar} className={'mx-auto relative mt-8 text-center text-2xl lg:text-3xl  bg-primary-lighter text-white font-semibold   rounded-lg shadow-md'} style={{width:"fit-content"}}>
+              <div className='mx-6 my-2'>Comprar</div>
               <div className="absolute right-0 h-4 top-0 w-full bg-primary-darker animate-ping rounded-md min-h-full opacity-75"></div>
               </p>
               <div className="flex flex-col sm:flex-row sm:-mx-3 mt-12">
