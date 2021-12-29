@@ -69,7 +69,22 @@
     transform: scale(1.25);
     background-color:rgb(0, 212, 18) ;
 }
-
+.iconWhatsappFixed{
+    position: fixed;
+    bottom: 4rem;
+    right: 2rem;
+    border-radius:15px;
+    padding: 5px;
+    color:white;
+    z-index: 1000;
+    background-color:rgb(0, 212, 18);
+    animation: whatsappFixed 3s infinite;
+}
+@keyframes whatsappFixed {
+0%{transform:translateY(0px)}
+50%{transform:translateY(15px)}
+100%{transform:translateY(0px)}
+}
 a {
     text-decoration:none;
 }

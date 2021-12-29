@@ -11,7 +11,7 @@ export default (props) => {
   let indexI = useRef(0);
   const [bShadow, setBShadow] = useState(0)
   const [update, setUpdate] = useState(1)
-  let width = 50
+  let width = 1000
   const useWidthVar = useWidth()
   const useHeightVar = useHeight()
   const [timerId,setTimerId]=useState(0);
@@ -22,19 +22,34 @@ export default (props) => {
     setforcedUpdate(!forcedUpdate)
   }
  
-  if (props.width&&useWidthVar>1023) {
-    width = (useHeightVar-50< useWidthVar*(props.width / 100)? (useHeightVar-75): (props.width / 100) * useWidthVar)
-  }
-  else{
-    if(useWidthVar>850 && props.mediumHiguer){
-      width = (useHeightVar-50< useWidthVar*(props.width / 100)? (useHeightVar-75): (props.width / 100) * useWidthVar)
-    }else{
-        width = (useHeightVar-225 < useWidthVar? useHeightVar -420: useWidthVar-200)
-         }
+  // if (props.width&&useWidthVar>1023) {
+  //   width = (useHeightVar-50< useWidthVar*(props.width / 100)? (useHeightVar-75): (props.width / 100) * useWidthVar)
+  // }
+  // else{
+  //   if(useWidthVar>850 && props.mediumHiguer){
+  //     width = (useHeightVar-50< useWidthVar*(props.width / 100)? (useHeightVar-75): (props.width / 100) * useWidthVar)
+  //   }else{
+  //       width = (useHeightVar-225 < useWidthVar? useHeightVar -420: useWidthVar-200)
+  //        }
+  //   }
+  // if(width>1100){
+  //   width=1100
+  // }
+  const calculateWidth = (props) => {
+    if(1009<useWidthVar){
+    
+      return  (useHeightVar-50< useWidthVar*(props.width_lg / 100)? (useHeightVar): (props.width_lg / 100) * useWidthVar)
     }
-  if(width>1100){
-    width=1100
+    if(850<useWidthVar){
+   
+      return  (useHeightVar-50< useWidthVar*(props.width_md / 100)? (useHeightVar): (props.width_md / 100) * useWidthVar)
+    }
+ 
+    return  (useHeightVar-50< useWidthVar*(props.width_sm / 100)? (useHeightVar): (props.width_sm / 100) * useWidthVar)
   }
+
+  width = calculateWidth(props)<1150?calculateWidth(props):1150
+  
   const backButton = () => {
     stopTimer()
     if (indexI.current != 0) {

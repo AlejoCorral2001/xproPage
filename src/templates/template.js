@@ -9,7 +9,7 @@ export default function cnc ({data}){
   
     const machine = data.allContentfulCncMachine.edges[0].node
     const comprar = () => {
-      let msg="Hola, estoy interesado en el modelo: "+machine.title
+      let msg="Hola me comunico desde la página www.xprocncs.com, estoy interesado en el modelo: "+machine.title
       msg="https://api.whatsapp.com/send/?phone=5493517889350&text="+msg
       window.open(msg ,"_top")
     }
@@ -20,7 +20,7 @@ export default function cnc ({data}){
               <div className="text-center text-3xl lg:text-4xl xl:text-5xl font-bold leading-none mb-4 lg:mb-8">{machine.title}
               </div>
               <br/>
-              <Carousel width={60} mediumHiguer={true}src={machine.images}/>
+              <Carousel width_lg={65} width_md={70} width_sm={75} src={machine.images}/>
               <br/>
               <br/>
               <div className={'bg-blue-200 p-4 rounded-lg'}><p className={'font-serif'}>{machine.description.description}</p></div>
@@ -32,7 +32,11 @@ export default function cnc ({data}){
               <p className={'bg-blue-300 p-5 rounded-lg text-xl text-center'}>{machine.price}</p>
               <br/>
               <p className={machine.stock?'text-center font-medium text-xl bg-green-400 p-3 rounded-lg':'text-center font-medium text-xl bg-red-400 p-3 rounded-lg'}>{machine.stock?'Este producto se encuentra en stock':'Este producto no se encuentra en stock'}</p>
-              <p onClick={comprar} className={'mx-auto  mt-5 text-center text-lg lg:text-2xl  bg-primary-lighter text-white font-semibold p-3 rounded-lg shadow-md'} style={{width:"fit-content"}}>Comprar</p>
+              
+              <p onClick={comprar} className={'mx-auto relative mt-5 text-center text-2xl lg:text-3xl  bg-primary-lighter text-white font-semibold   rounded-lg shadow-md'} style={{width:"fit-content"}}>
+              <div className='px-5 py-2'>Comprar</div>
+              <div className="absolute right-0 h-4 top-0 w-full bg-primary-darker animate-ping rounded-md min-h-full opacity-75"></div>
+              </p>
               <div className="flex flex-col sm:flex-row sm:-mx-3 mt-12">
                 <div className="flex-1 px-3">
                   <Card className="mb-8">

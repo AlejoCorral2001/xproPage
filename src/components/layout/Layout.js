@@ -5,6 +5,7 @@ import {useState} from 'react'
 import Img from 'gatsby-image'
 import Style from './presentation.module.css'
 import {useStaticQuery, graphql} from 'gatsby'
+import Whatsapp from "../../components/socialIcons/whatsappIcon"
 const Layout = (props) => {
   const data = useStaticQuery(graphql`
 query{
@@ -48,11 +49,13 @@ const [content, setContent] = useState(
 
 else{
   return (
-    <>
+    <div className="relative">
     <Header type={props.type}/>
+    <Whatsapp size={"auto"} className="fixed"/>
     <main className="text-gray-900">{props.children}</main>
     <Footer type={props.type}/>
-  </>)
+    </div>
+    )
 
 }
 

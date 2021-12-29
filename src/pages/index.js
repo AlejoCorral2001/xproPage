@@ -43,7 +43,7 @@ export default ({data}) => {
         <br/>
         </div>
         <div className="lg:w-1/2 ">
-        <Insta width={35}/>
+        <Insta width_lg={39} width_md={65} width_sm={80}/>
          
         </div>
       </div>
